@@ -7,18 +7,18 @@ import Crm from "../public/crm.jpg";
 
 const card = [
   {
-    title: "CRM Implementation.",
-    description: "Enhancing relationships, driving business growth.",
-    content:
-      "We implement an all-inclusive CRM system that helps you manage your business contact, pipeline, funnel and monitor marketing performance",
-    src: Crm,
-  },
-  {
     title: "Marketing Automation & Sales Management.",
     description: "Automate engagement for personalized outreach.",
     content:
       "Levearge automation to add leads to pipelines, tag contacts, send automated email sequences and monitor replies within your CRM",
     src: Email,
+  },
+  {
+    title: "CRM Implementation.",
+    description: "Enhancing relationships, driving business growth.",
+    content:
+      "We implement an all-inclusive CRM system that helps you manage your business contact, pipeline, funnel and monitor marketing performance",
+    src: Crm,
   },
   {
     title: "Digital Marketing.",
@@ -81,7 +81,7 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="mt-8 flex-col text-center flex items-center text-xl justify-center w-10/12 mx-auto sm:text-base xs:text-sm md:text-base ">
+        <div className="mt-8 flex-col text-center flex items-center text-xl justify-center w-10/12 mx-auto sm:text-sm xs:text-xs md:text-sm ">
           <p className="">
             Our insourced team help businesses with CRM operations. Marketing
             Tech implementation and multi-channel digital marketing

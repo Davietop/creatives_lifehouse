@@ -17,7 +17,7 @@ const style2 = {
 
 export function CardWithForm({ data }) {
   return (
-    <Card className=" border-2 border-[#121b1b]   bg-cover bg-center bg-no-repeat  xs:w-10/12 sm:w-8/12 md:w-[360px] rounded-xl shadow  ">
+    <Card className=" border-2 p-2 border-[#121b1b]   bg-cover bg-center bg-no-repeat  xs:w-9/12 sm:w-[320px] md:w-[320px] rounded-xl shadow  ">
       <CardHeader>
         <div className="flex items-center justify-center flex-col gap-6">
           <CardTitle className="text-center">{data.title}</CardTitle>
@@ -29,7 +29,9 @@ export function CardWithForm({ data }) {
           {data.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-center text-xs">{data.content}</CardContent>
+      <CardContent className="text-center text-xs md:text-xs">
+        {data.content}
+      </CardContent>
     </Card>
   );
 }

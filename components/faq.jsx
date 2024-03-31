@@ -9,7 +9,8 @@ import { Button } from "@nextui-org/react";
 import search from "../public/search.png";
 import general from "../public/general.png";
 import customer_service from "../public/customer_service.png";
-import pricing from "../public/pricing.png";
+import pricing from "../public/price-tag (4).png";
+import pricing2 from "../public/pricing.png";
 import phone from "../public/phone.png";
 import mail from "../public/message.png";
 import { AccordionDemo } from "./accordion";
@@ -99,7 +100,7 @@ export default function Faq() {
             placeholder="Keywords (General, Pricing, Service)"
           />
           <Button
-            className="bg-[#9e591b] text-white "
+            className="text-sm sm:text-sm xs:text-xs bg-[#9e591b] text-white "
             onClick={() => {
               if (document.querySelector("#text").value === "") return;
               setData({
@@ -111,12 +112,12 @@ export default function Faq() {
             Search
           </Button>
         </div>
-        <p className="mt-4 text-sm">
+        <p className="mt-4 text-sm sm:text-sm xs:text-xs">
           Find answers to frequently asked questions
         </p>
 
         <div
-          className="mt-10 flex flex-wrap items-center justify-center gap-6 "
+          className="mt-6 flex flex-wrap items-center justify-center gap-6 "
           onClick={(e) => {
             const target = e.target.id.toLowerCase();
             if (!target) return;
@@ -127,47 +128,75 @@ export default function Faq() {
           }}
         >
           <div
-            className="bg-[#9e591b] text-white cursor-pointer shadow w-4/12 sm:w-3/12   md:w-2/12 lg:w-2/12 xl:w-2/12 p-4 flex items-center flex-col gap-6 rounded-xl"
-            id="general"
+            className="bg-[#9e591b] text-white cursor-pointer shadow xs:w-3/12 sm:w-2/12 md:w-2/12 lg:w-2/12 xl:w-1/12 xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl"
+            id="service"
           >
             <Image
+              className="xs:hidden md:flex"
               src={general.src}
-              id="general"
               width={60}
               height={60}
-              alt="general"
+              alt="customer_Service"
+              id="service"
             />
-            <p id="general" className="text-sm font-bold">
+            <Image
+              className="xs:flex md:hidden"
+              src={general.src}
+              width={32}
+              height={32}
+              alt="customer_Service"
+              id="service"
+            />
+            <p id="pricing" className="xs:text-xs text-sm font-bold ">
               General
             </p>
           </div>
           <div
-            className="bg-[#9e591b] text-white cursor-pointer shadow w-4/12 sm:w-3/12 md:w-2/12 lg:w-2/12 xl:w-2/12 p-4 flex items-center flex-col gap-6 rounded-xl"
+            className="bg-[#9e591b] text-white cursor-pointer shadow xs:w-3/12 sm:w-2/12 md:w-2/12 lg:w-2/12 xl:w-1/12 xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl"
             id="service"
           >
             <Image
+              className="xs:hidden md:flex"
               src={customer_service.src}
               width={60}
               height={60}
               alt="customer_Service"
               id="service"
             />
-            <p id="service" className="text-sm font-bold ">
+            <Image
+              className="xs:flex md:hidden"
+              src={customer_service.src}
+              width={32}
+              height={32}
+              alt="customer_Service"
+              id="service"
+            />
+
+            <p id="pricing" className="xs:text-xs text-sm font-bold ">
               Services
             </p>
           </div>
           <div
-            className="bg-[#9e591b] text-white cursor-pointer shadow w-4/12 sm:w-3/12 md:w-2/12 lg:w-2/12 xl:w-2/12 p-4 flex items-center flex-col gap-6 rounded-xl"
-            id="pricing"
+            className="bg-[#9e591b] text-white cursor-pointer shadow xs:w-3/12 sm:w-2/12 md:w-2/12 lg:w-2/12 xl:w-1/12 xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl"
+            id="service"
           >
             <Image
-              id="pricing"
-              src={pricing.src}
-              width={60}
-              height={60}
-              alt="pricing"
+              className="xs:hidden md:flex"
+              src={pricing2.src}
+              width={64}
+              height={64}
+              alt="mail"
+              objectFit="contain"
             />
-            <p id="pricing" className="text-sm font-bold ">
+            <Image
+              className="xs:flex md:hidden"
+              src={pricing2.src}
+              width={32}
+              height={32}
+              alt="mail"
+              objectFit="contain"
+            />
+            <p id="pricing" className="xs:text-xs text-sm font-bold ">
               Pricing
             </p>
           </div>
@@ -175,7 +204,7 @@ export default function Faq() {
       </div>
 
       <h3
-        className={cn("text-center text-xl font-bold mt-20", poppins.className)}
+        className={cn("text-center text-xl font-bold mt-10", poppins.className)}
       >
         {checked[0].id.toLocaleUpperCase()}
       </h3>
@@ -206,23 +235,43 @@ export default function Faq() {
           creatives support below
         </p>
         <div className="flex items-center flex-wrap mt-6 gap-6 justify-center">
-          <div className=" bg-[#9e591b] text-white shadow sm:w-fit w-fit md:w-fit lg:w-fit p-6 flex items-center flex-col rounded-xl">
+          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit   xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl">
             <Image
+              className="xs:hidden md:flex"
               src={mail.src}
               width={64}
               height={64}
               alt="mail"
               objectFit="contain"
             />
-            <h4 className="font-bold text-sm mt-2 mb-2">info@lifehouse.com</h4>
-            <p className="text-xs">Best way to answer faster</p>
+            <Image
+              className="xs:flex md:hidden"
+              src={mail.src}
+              width={40}
+              height={40}
+              alt="mail"
+              objectFit="contain"
+            />
+            <h4 className="font-bold text-xs mt-2 mb-2">info@lifehouse.com</h4>
           </div>
-          <div className=" bg-[#9e591b] text-white shadow  sm:w-fit w-fit md:w-fit lg:w-fit p-6 flex items-center flex-col rounded-xl">
-            <Image src={phone.src} width={64} height={64} alt="call" />
-            <h4 className="font-bold text-sm  mt-2 mb-2">
+          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit   xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl">
+            <Image
+              className="xs:hidden md:flex"
+              src={phone.src}
+              width={64}
+              height={64}
+              alt="call"
+            />
+            <Image
+              className="xs:flex md:hidden"
+              src={phone.src}
+              width={40}
+              height={40}
+              alt="call"
+            />
+            <h4 className="font-bold text-xs  mt-2 mb-2">
               +(234) 903-224-5613
             </h4>
-            <p className="text-xs">Always happy to help you</p>
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ export default function Members() {
         </h1>
       </div>
 
-      <div className="mt-4  text-xl  w-10/12 mx-auto sm:text-lg xs:text-base md:text-lg  ">
+      <div className="mt-4  text-xl  w-10/12 mx-auto sm:text-lg xs:text-xs md:text-lg  ">
         <p>Behind the Brilliance: Unveiling Our Dream Team!</p>
       </div>
 
