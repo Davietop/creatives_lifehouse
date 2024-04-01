@@ -129,23 +129,23 @@ export default function Faq() {
         >
           <div
             className="bg-[#9e591b] text-white cursor-pointer shadow xs:w-3/12 sm:w-2/12 md:w-2/12 lg:w-2/12 xl:w-1/12 xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl"
-            id="service"
+            id="general"
           >
             <Image
               className="xs:hidden md:flex"
               src={general.src}
               width={60}
               height={60}
-              alt="customer_Service"
-              id="service"
+              alt="general_img"
+              id="general"
             />
             <Image
               className="xs:flex md:hidden"
               src={general.src}
               width={32}
               height={32}
-              alt="customer_Service"
-              id="service"
+              alt="general_img"
+              id="general"
             />
             <p id="pricing" className="xs:text-xs text-sm font-bold ">
               General
@@ -178,14 +178,14 @@ export default function Faq() {
           </div>
           <div
             className="bg-[#9e591b] text-white cursor-pointer shadow xs:w-3/12 sm:w-2/12 md:w-2/12 lg:w-2/12 xl:w-1/12 xs:p-4 md:p-4   flex items-center flex-col gap-6 xs:gap-1 rounded-xl"
-            id="service"
+            id="pricing"
           >
             <Image
               className="xs:hidden md:flex"
               src={pricing2.src}
               width={64}
               height={64}
-              alt="mail"
+              alt="pricing"
               objectFit="contain"
             />
             <Image
@@ -193,7 +193,7 @@ export default function Faq() {
               src={pricing2.src}
               width={32}
               height={32}
-              alt="mail"
+              alt="pricing"
               objectFit="contain"
             />
             <p id="pricing" className="xs:text-xs text-sm font-bold ">
