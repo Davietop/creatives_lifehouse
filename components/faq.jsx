@@ -87,7 +87,32 @@ export default function Faq() {
   });
 
   return (
-    <div className="mt-20">
+    <div className="mt-10">
+      <div className="flex gap-4 ml-6 md:ml-20">
+        <div className="flex mt-10 items-center justify-center ">
+          <div
+            style={{
+              backgroundImage:
+                "linear-gradient(to left, #283d3b, #203d29, #30390b, #4c2d00, #670c04)",
+            }}
+            className="h-[2px]  w-[50px] "
+          ></div>
+          <div
+            className=""
+            style={{
+              borderLeft: "2px solid green",
+              height: "18px",
+            }}
+          ></div>
+        </div>
+        <h1
+          className={cn(
+            "decoration-4 font-[700]   text-center sm:text-lg xs:text-base md:text-xl mt-10"
+          )}
+        >
+          FAQ
+        </h1>
+      </div>
       <div className={cn("text-center  text-bold  ", fontSans.variable)}>
         {/* <h1 className="text-2xl font-bold">Hi, We're here to help you</h1> */}
         <div className="border-0 shadow mt-6 sm:w-10/12 w-10/12 md:w-8/12 lg:w-7/12 xl:w-6/12 mx-auto border p-2 rounded-lg flex items-center justify-center gap-6">

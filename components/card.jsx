@@ -19,19 +19,17 @@ export function CardWithForm({ data }) {
   return (
     <Card className=" border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-10/12 sm:w-[320px] md:w-[320px] rounded-xl shadow  ">
       <CardHeader>
-        <div className="flex items-center justify-center flex-col gap-6">
+        <div className="flex text-sm items-center justify-center flex-col gap-6">
           <CardTitle className="text-center font-bold">{data.title}</CardTitle>
           <CardDescription>
             <Image src={data.src.src} alt="image" width={200} height={200} />
           </CardDescription>
         </div>
-        <CardDescription className="text-sm font-bold text-center">
+        <CardDescription className="text-xs font-bold text-center">
           {data.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-center text-xs md:text-xs">
-        {data.content}
-      </CardContent>
+      <CardContent className="text-center text-xs ">{data.content}</CardContent>
     </Card>
   );
 }

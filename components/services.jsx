@@ -52,33 +52,30 @@ export default function Services() {
       )}
     >
       <div style={style2} className="h-fit pt-10 pb-10">
-        <div className="">
-          <div className="flex items-center justify-center gap-2">
-            <div className="flex mt-10 items-center justify-center">
-              <div
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to left, #283d3b, #203d29, #30390b, #4c2d00, #670c04)",
-                }}
-                className="h-[2px]  w-[50px] "
-              ></div>
-              <div
-                className=""
-                style={{
-                  borderLeft: "2px solid green",
-                  height: "18px",
-                }}
-              ></div>
-            </div>
-            <h1
-              className={cn(
-                "services decoration-4 font-[700]  text-center sm:text-lg xs:text-base md:text-lg mt-10",
-                fontSans.variable
-              )}
-            >
-              Our Services
-            </h1>
+        <div className="flex gap-4 ml-6 md:ml-20">
+          <div className="flex mt-10 items-center justify-center ">
+            <div
+              style={{
+                backgroundImage:
+                  "linear-gradient(to left, #283d3b, #203d29, #30390b, #4c2d00, #670c04)",
+              }}
+              className="h-[2px]  w-[50px] "
+            ></div>
+            <div
+              className=""
+              style={{
+                borderLeft: "2px solid green",
+                height: "18px",
+              }}
+            ></div>
           </div>
+          <h1
+            className={cn(
+              "decoration-4 font-[700]   text-center sm:text-lg xs:text-base md:text-xl mt-10"
+            )}
+          >
+            Our Services
+          </h1>
         </div>
 
         <div className="mt-8 flex-col text-center flex items-center text-xl justify-center w-10/12 mx-auto sm:text-sm xs:text-xs md:text-sm ">

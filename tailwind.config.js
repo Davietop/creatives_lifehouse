@@ -40,7 +40,7 @@ module.exports = {
       },
       backgroundImage: {
         vr_Img: "url('../public/newPic.jpg')",
-        bg_img: "url('../public/bg_img.jpeg')",
+        bg_img: "url('../public/bg_img.jpg')",
         bg_test2: "url('../public/test2.jpg')",
         gradient: "url('../public/rhombus.jpg')",
 
