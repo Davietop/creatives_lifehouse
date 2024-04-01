@@ -72,7 +72,7 @@ export default function Services() {
             </div>
             <h1
               className={cn(
-                "services decoration-4 font-[500]  text-center sm:text-lg xs:text-base md:text-lg mt-10",
+                "services decoration-4 font-[700]  text-center sm:text-lg xs:text-base md:text-lg mt-10",
                 fontSans.variable
               )}
             >

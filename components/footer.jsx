@@ -22,13 +22,26 @@ export default function Footer() {
     >
       <div className="">
         <div className="flex items-center flex-col">
-          <Image width={150} height={150} alt="logo" src={logo.src} />
+          <Image
+            className="xs:flex md:hidden"
+            width={100}
+            height={100}
+            alt="logo"
+            src={logo.src}
+          />
+          <Image
+            className="xs:hidden md:flex"
+            width={150}
+            height={150}
+            alt="logo"
+            src={logo.src}
+          />
 
           <div className="socials flex items-center  gap-10 mt-4 ">
-            <Image width={25} height={25} alt="facebook" src={facebook.src} />
-            <Image width={25} height={25} alt="google" src={google.src} />
-            <Image width={25} height={25} alt="twitter" src={twitter.src} />
-            <Image width={25} height={20} alt="linkedin" src={linkedin.src} />
+            <Image width={20} height={20} alt="facebook" src={facebook.src} />
+            <Image width={20} height={20} alt="google" src={google.src} />
+            <Image width={20} height={20} alt="twitter" src={twitter.src} />
+            <Image width={20} height={20} alt="linkedin" src={linkedin.src} />
           </div>
         </div>
 
@@ -37,7 +50,7 @@ export default function Footer() {
             <h3 className="font-[600] text-lg sm:text-base 2sm:text-base md:text-base xl:text-lg 2xl:text-lg">
               Connect
             </h3>
-            <div className="conp text-lg text-sm sm:text-xs mt-4 2sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-base">
+            <div className="conp text-lg xs:text-sm sm:text-xs mt-4 2sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-base">
               <p className="text_address w-[85%] pb-2 sm:w-[65%] md:w-[85%]">
                 Lagos, Nigeria
               </p>

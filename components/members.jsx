@@ -67,7 +67,7 @@ export default function Members() {
         </div>
         <h1
           className={cn(
-            "decoration-4 font-[500]   text-center sm:text-lg xs:text-base md:text-xl mt-10"
+            "decoration-4 font-[700]   text-center sm:text-lg xs:text-base md:text-xl mt-10"
           )}
         >
           Our Team Of Experts

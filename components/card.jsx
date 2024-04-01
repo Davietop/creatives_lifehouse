@@ -17,15 +17,15 @@ const style2 = {
 
 export function CardWithForm({ data }) {
   return (
-    <Card className=" border-2 p-2 border-[#121b1b]   bg-cover bg-center bg-no-repeat  xs:w-9/12 sm:w-[320px] md:w-[320px] rounded-xl shadow  ">
+    <Card className=" border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-10/12 sm:w-[320px] md:w-[320px] rounded-xl shadow  ">
       <CardHeader>
         <div className="flex items-center justify-center flex-col gap-6">
-          <CardTitle className="text-center">{data.title}</CardTitle>
+          <CardTitle className="text-center font-bold">{data.title}</CardTitle>
           <CardDescription>
             <Image src={data.src.src} alt="image" width={200} height={200} />
           </CardDescription>
         </div>
-        <CardDescription className="text-center">
+        <CardDescription className="text-sm font-bold text-center">
           {data.description}
         </CardDescription>
       </CardHeader>

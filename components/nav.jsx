@@ -92,7 +92,7 @@ export default function NavBar() {
             </Button>
           </NavbarItem>
           <NavbarItem>
-            <Sheet className={cn("hidden ")}>
+            <Sheet className={cn("hidden text-sm ")}>
               <SheetTrigger>
                 {" "}
                 <Image alt="image" width={20} height={20} src={touch} />
