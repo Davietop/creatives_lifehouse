@@ -1,6 +1,7 @@
 "use client";
 
 import { AccordionDemo } from "@/components/accordion";
+import Message from "@/components/callback";
 import Faq from "@/components/faq";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero";
@@ -27,6 +28,7 @@ export default function Home() {
       <Technology />
       <Members />
       <Faq />
+      <Message />
       <Footer />
     </div>
   );

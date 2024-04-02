@@ -9,15 +9,28 @@ import { Image } from "@nextui-org/react";
 
 import Crm from "../public/crm.jpg";
 
-const style2 = {
-  background: "rgba(255, 255, 255,0.1)",
-  backdropFilter: "blur(5.9px)",
-  WebkitBackdropFilter: "blur(5.9px)",
+// const style2 = {
+//   background: "rgba(255, 255, 255,0.1)",
+//   backdropFilter: "blur(5.9px)",
+//   WebkitBackdropFilter: "blur(5.9px)",
+// };
+
+const style = {
+  /* From https://css.glass */
+  background: "rgba(255, 255, 255, 1)",
+  // borderRadius: 16px;
+  boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+  backdropFilter: "blur(20px)",
+  webkitBackdropFilter: "blur(20px)",
+  border: "1px solid rgba(255, 255, 255, 0.3)",
 };
 
 export function CardWithForm({ data }) {
   return (
-    <Card className=" border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-10/12 sm:w-[320px] md:w-[320px] rounded-xl shadow  ">
+    <Card
+      style={style}
+      className=" border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-10/12 sm:w-[320px] md:w-[320px] rounded-xl shadow  "
+    >
       <CardHeader>
         <div className="flex text-sm items-center justify-center flex-col gap-6">
           <CardTitle className="text-center font-bold">{data.title}</CardTitle>
@@ -29,7 +42,9 @@ export function CardWithForm({ data }) {
           {data.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className="text-center text-xs ">{data.content}</CardContent>
+      <CardContent className=" text-center  xs:text-xs sm:text-xs  md:text-sm ">
+        {data.content}
+      </CardContent>
     </Card>
   );
 }

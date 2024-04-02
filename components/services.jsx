@@ -14,19 +14,19 @@ const card = [
     src: Email,
   },
   {
-    title: "CRM Implementation.",
-    description: "Enhancing relationships, driving business growth.",
-    content:
-      "We implement an all-inclusive CRM system that helps you manage your business contact, pipeline, funnel and monitor marketing performance",
-    src: Crm,
-  },
-  {
     title: "Digital Marketing.",
     description:
       "Optimize outreach, amplify brand visibility, and enhance engagement.",
     content:
       "Drive traffic and improve conversion rate through SEO, PPC, social media and optimize marketing strategies for continued success.",
     src: Digital,
+  },
+  {
+    title: "CRM Implementation.",
+    description: "Enhancing relationships, driving business growth.",
+    content:
+      "We implement an all-inclusive CRM system that helps you manage your business contact, pipeline, funnel and monitor marketing performance",
+    src: Crm,
   },
 ];
 
