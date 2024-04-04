@@ -115,7 +115,7 @@ export default function Faq() {
       </div>
       <div className={cn("text-center  text-bold  ", fontSans.variable)}>
         {/* <h1 className="text-2xl font-bold">Hi, We're here to help you</h1> */}
-        <div className="border-0 shadow mt-6 sm:w-10/12 w-10/12 md:w-8/12 lg:w-7/12 xl:w-6/12 mx-auto border p-2 rounded-lg flex items-center justify-center gap-6">
+        <div className="border-0 shadow mt-6 sm:w-10/12 xs:w-11/12 w-10/12 md:w-8/12 lg:w-7/12 xl:w-6/12 mx-auto border p-2 rounded-lg flex items-center justify-center gap-6">
           <Image src={search.src} width={20} height={20} alt="search" />
 
           <input
@@ -124,7 +124,7 @@ export default function Faq() {
             }}
             type="text"
             id="text"
-            className="text-sm md:w-9/12 sm:w-11/12 w-10/12 p-1 outline-none"
+            className="text-sm md:w-9/12 xs:w-11/12 sm:w-11/12 w-10/12 p-1 outline-none"
             placeholder="Keywords (General, Pricing, Service)"
           />
           <Button
@@ -266,7 +266,7 @@ export default function Faq() {
           creatives support below
         </p>
         <div className="flex items-center flex-wrap mt-6 gap-6 xs:gap-4 justify-center">
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit   xs:p-4 md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
+          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 md:p-4 justify-center  flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
             <Image
               className="xs:hidden md:flex"
               src={mail.src}
@@ -285,7 +285,7 @@ export default function Faq() {
             />
             <h4 className="font-bold text-xs mt-2 mb-2">info@lifehouse.com</h4>
           </div>
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit   xs:p-4 md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
+          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 md:p-4 justify-center   md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
             <Image
               className="xs:hidden md:flex"
               src={mail.src}
