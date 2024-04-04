@@ -16,10 +16,18 @@ import CoFounder from "../public/miss.png";
 
 import Link from "next/link";
 
+// const styles = {
+//   background: "rgba(0, 0, 0, 0.35)",
+//   backdropFilter: "blur(5.9px)",
+//   WebkitBackdropFilter: "blur(5.9px)",
+// };
+
 const styles = {
-  background: "rgba(0, 0, 0, 0.35)",
-  backdropFilter: "blur(5.9px)",
-  WebkitBackdropFilter: "blur(5.9px)",
+  background: "rgba( 255, 255, 255, 1 )",
+
+  backdropFilter: "blur( 20px )",
+  WebkitBackdropFilter: "blur( 20px )",
+  boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
 };
 
 const members = [
@@ -83,7 +91,7 @@ export default function Members() {
           return (
             <Card
               key={i}
-              className="content border-2 border-[#9e591b] bg-bg_members_6 bg-cover bg-center bg-no-repeat   w-fit  "
+              className="content border-1 border-[#121b1b]  bg-bg_members_6 bg-cover bg-center bg-no-repeat   w-fit  "
             >
               <div className="content-overlay"></div>
               <Image

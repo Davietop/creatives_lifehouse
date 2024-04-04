@@ -250,56 +250,6 @@ export default function Faq() {
           );
         })}
       </div>
-
-      <div
-        className={cn("text-center mt-10 w-10/12 mx-auto", fontSans.variable)}
-      >
-        <h1 className="text-lg font-bold mb-6">You still have a question?</h1>
-        <p className="text-xs md:text-sm">
-          If you can not find what you are looking for, click contact Lifehouse
-          creatives support below
-        </p>
-        <div className="flex items-center flex-wrap mt-6 gap-6 xs:gap-4 justify-center">
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit   xs:p-2 md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
-            <Image
-              className="xs:hidden md:flex"
-              src={mail.src}
-              width={64}
-              height={64}
-              alt="mail"
-              objectFit="contain"
-            />
-            <Image
-              className="xs:flex md:hidden"
-              src={mail.src}
-              width={40}
-              height={40}
-              alt="mail"
-              objectFit="contain"
-            />
-            <h4 className="font-bold text-xs mt-2 mb-2">info@lifehouse.com</h4>
-          </div>
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit   xs:p-2 md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
-            <Image
-              className="xs:hidden md:flex"
-              src={phone.src}
-              width={64}
-              height={64}
-              alt="call"
-            />
-            <Image
-              className="xs:flex md:hidden"
-              src={phone.src}
-              width={40}
-              height={40}
-              alt="call"
-            />
-            <h4 className="font-bold text-xs  mt-2 mb-2">
-              +(234) 903-224-5613
-            </h4>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
