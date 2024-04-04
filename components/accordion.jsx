@@ -8,11 +8,16 @@ import {
 export function AccordionDemo({ queries, value }) {
   return (
     <Accordion type="single" collapsible className="w-full">
-      <AccordionItem value={`key${value}`} key={value}>
-        <AccordionTrigger className="text-left">
+      <AccordionItem key={value} value={`key${value}`}>
+        <AccordionTrigger
+          style={{
+            textDecoration: "none",
+          }}
+          className="xs:text-xs sm:text-sm text-left"
+        >
           {queries.question}
         </AccordionTrigger>
-        <AccordionContent className="text-left">
+        <AccordionContent className="xs:text-xs sm:text-sm text-left">
           {queries.answer}
         </AccordionContent>
       </AccordionItem>
