@@ -85,10 +85,9 @@ export default function TeamAbout() {
       <div className="relative mt-10 p-4 flex items-center justify-center gap-7 flex-wrap">
         {members.map((data, i) => {
           return (
-            <div>
+            <div key={i}>
               <Card
                 style={style2}
-                key={i}
                 className="content  xs:w-[350px]  md:w-[400px] "
               >
                 <div className="content-overlay"></div>
