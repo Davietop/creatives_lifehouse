@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+@import "https://cdn.jsdelivr.net/npm/open-props@1.6.17/open-props.min.css";
 
 /* width */
 .scrolled::-webkit-scrollbar {
@@ -283,6 +285,9 @@ input:is(:focus, :valid) + .placeholder {
   position: relative;
   overflow: hidden;
 }
+.container2 {
+  overflow: hidden;
+}
 
 .circle {
   position: absolute;
@@ -294,6 +299,78 @@ input:is(:focus, :valid) + .placeholder {
   border-radius: 50%;
   transform: translate(50%, 50%);
 }
+.circle2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background-color: #121b1b;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
 textarea {
   outline: none;
+}
+
+.shape {
+  position: relative;
+  overflow: hidden;
+  height: 130px;
+}
+
+.shape::before {
+  border-radius: 100%;
+  position: absolute;
+  background: #121b1b;
+  right: -200px;
+  left: -200px;
+  top: -200px;
+  content: "";
+  bottom: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 1em;
+  font-family: "Montserrat";
+}
+.splide {
+  max-width: 90vw;
+}
+.splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.splide__slide__container {
+  height: 120px;
+  aspect-ratio: 16/9;
+  background-color: red;
+  border-radius: 0.4em;
+  display: flex;
+  align-items: end;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out,
+    height 300ms var(--ease-bounce-1);
+}
+.splide__slide__container h1 {
+  font-family: "Montserrat";
+  margin-left: 1em;
+  color: white;
+}
+
+.splide__slide__container h1 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 250ms ease-in-out, transform 250ms var(--ease-bounce-1);
 }

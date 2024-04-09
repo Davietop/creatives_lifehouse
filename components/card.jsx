@@ -9,19 +9,13 @@ import { Image } from "@nextui-org/react";
 
 import Crm from "../public/crm.jpg";
 
-// const style2 = {
-//   background: "rgba(255, 255, 255,0.1)",
-//   backdropFilter: "blur(5.9px)",
-//   WebkitBackdropFilter: "blur(5.9px)",
-// };
-
 const style = {
   /* From https://css.glass */
   background: "rgba(255, 255, 255, 1)",
   // borderRadius: 16px;
   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
   backdropFilter: "blur(20px)",
-  webkitBackdropFilter: "blur(20px)",
+
   border: "1px solid rgba(255, 255, 255, 0.3)",
 };
 

@@ -27,7 +27,7 @@ import {
   NextUIProvider,
 } from "@nextui-org/react";
 
-export default function NavBar() {
+export default function NavAbout() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = ["Home", "About Us", "Blogs & Resources"];
@@ -35,7 +35,10 @@ export default function NavBar() {
   return (
     <NextUIProvider>
       <Navbar
-        className={cn("sm:p-2 md:p-4", fontSans.variable)}
+        className={cn(
+          " bg-[#121b1b] text-white sm:p-2 md:p-4",
+          fontSans.variable
+        )}
         isBordered
         isMenuOpen={isMenuOpen}
         onMenuOpenChange={setIsMenuOpen}
@@ -64,8 +67,8 @@ export default function NavBar() {
               alt="image"
               className="lg:w-[100px]"
               src={logo}
-              width={120}
-              height={120}
+              width={100}
+              height={100}
             />
           </NavbarBrand>
           <NavbarItem>
@@ -95,7 +98,13 @@ export default function NavBar() {
             <Sheet className={cn("hidden text-sm ")}>
               <SheetTrigger>
                 {" "}
-                <Image alt="image" width={20} height={20} src={touch} />
+                <Image
+                  className="bg-white"
+                  alt="image"
+                  width={20}
+                  height={20}
+                  src={touch}
+                />
               </SheetTrigger>
               <SheetContent
                 className={cn(fontSans.variable, "bg-[#121b1b] text-white ")}

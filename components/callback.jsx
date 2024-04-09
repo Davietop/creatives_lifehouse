@@ -12,7 +12,7 @@ const style = {
 
   boxShadow: "0 4px 30px white",
   backdropFilter: "blur(20px)",
-  webkitBackdropFilter: "blur(20px)",
+  WebkitBackdropFilter: "blur(20px)",
   border: "1px solid white",
 };
 
@@ -21,7 +21,7 @@ export default function Message() {
     <div
       style={style}
       className={cn(
-        " flex h-fit m-4 mt-10 mx-auto   md:w-11/12 md:h-fit   lg:h-full lg:w-9/12 xl:w-8/12  sm:w-11/12  xs:w-11/12    shadow p-3 rounded-xl  ",
+        " flex h-fit m-4 mt-20 mx-auto   md:w-11/12 md:h-fit   lg:h-full lg:w-9/12 xl:w-8/12  sm:w-11/12  xs:w-11/12    shadow p-3 rounded-xl  ",
         poppins.variable
       )}
     >
@@ -101,14 +101,14 @@ export default function Message() {
             </div>
           </div>
 
-          <div class=" input-wrapper  ">
+          <div className=" input-wrapper  ">
             <input
               className=" bg-[#f0f0f0]  border-1 border-2 border-[#121b1b] xs:w-[290px] sm:w-[540px] md:w-[370px] lg:w-[430px] xl:w-[480px] 2xl:w-[540px]"
               type="text"
               id="input"
               required
             ></input>
-            <label for="input" class="placeholder">
+            <label for="input" className="placeholder">
               Your Subject
             </label>
           </div>

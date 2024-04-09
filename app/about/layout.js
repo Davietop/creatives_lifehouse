@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
-import "./globals.css";
-import { fontSans, poppins } from "@/fonts";
+
+import "/app/globals.css";
+
+import { fontSans, poppins, open_Sans } from "@/fonts";
 
 export const metadata = {
   title: "Life House",
@@ -10,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn("bg-white  antialiased", fontSans.variable)}>
+      <body className={cn("bg-white  antialiased", open_Sans.className)}>
         {children}
       </body>
     </html>
