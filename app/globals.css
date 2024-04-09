@@ -303,8 +303,8 @@ input:is(:focus, :valid) + .placeholder {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   background-color: #121b1b;
   border-radius: 50%;
   transform: translate(-50%, -50%);
