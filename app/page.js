@@ -9,7 +9,9 @@ import HeroSectionsm from "@/components/herosm";
 import Members from "@/components/members";
 import NavBar from "@/components/nav";
 import Services from "@/components/services";
+import Slide from "@/components/technolgies";
 import Technology from "@/components/technolgies";
+import ContactForm from "@/components/testingContact";
 import Image from "next/image";
 
 export default function Home() {
@@ -25,10 +27,13 @@ export default function Home() {
         </div>
       </main>
       <Services />
-      <Technology />
+      <Slide />
       <Members />
+
       <Faq />
-      <Message />
+
+      <ContactForm />
+
       <Footer />
     </div>
   );

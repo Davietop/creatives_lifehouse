@@ -38,7 +38,7 @@ const style2 = {
 
 export default function TeamAbout() {
   return (
-    <div>
+    <div className="mt-10">
       <div className="flex gap-4 ml-6 md:ml-20">
         <div className="flex mt-10 items-center justify-center ">
           <div

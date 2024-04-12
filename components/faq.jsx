@@ -85,7 +85,7 @@ export default function Faq() {
   const checked = question.filter((data) => {
     return data.id === data2.id;
   });
-
+  console.log(checked);
   return (
     <div className="mt-10">
       <div className="flex gap-4 ml-6 md:ml-20">
@@ -148,6 +148,7 @@ export default function Faq() {
           className="mt-6 flex flex-wrap items-center justify-center gap-6 "
           onClick={(e) => {
             const target = e.target.id.toLowerCase();
+            console.log(e);
             if (!target) return;
             setData({
               id: target,
@@ -234,7 +235,7 @@ export default function Faq() {
       <h3
         className={cn("text-center text-xl font-bold mt-10", poppins.className)}
       >
-        {checked[0].id.toLocaleUpperCase()}
+        {checked[0]?.id.toLocaleUpperCase()}
       </h3>
 
       <div className=" flex flex-col  mt-6 ">
@@ -266,7 +267,7 @@ export default function Faq() {
           creatives support below
         </p>
         <div className="flex items-center flex-wrap mt-6 gap-6 xs:gap-4 justify-center">
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 md:p-4 justify-center  flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
+          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 xs:pt-4 md:p-4 justify-center  flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
             <Image
               className="xs:hidden md:flex"
               src={mail.src}
@@ -285,7 +286,7 @@ export default function Faq() {
             />
             <h4 className="font-bold text-xs mt-2 mb-2">info@lifehouse.com</h4>
           </div>
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 md:p-4 justify-center   md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
+          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 xs:pt-4 md:p-4 justify-center   md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
             <Image
               className="xs:hidden md:flex"
               src={mail.src}

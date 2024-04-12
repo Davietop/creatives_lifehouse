@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import tele_contact from "../public/tele_contact.png";
 import location_contact from "../public/location_contact.png";
@@ -5,6 +7,8 @@ import mail_contact from "../public/mail_contact.png";
 import { Button } from "@nextui-org/button";
 import { cn } from "@/lib/utils";
 import { fontSans, poppins } from "@/fonts";
+import { useState } from "react";
+import sendContactForm from "@/lib/api";
 
 const style = {
   /* From https://css.glass */
@@ -16,7 +20,38 @@ const style = {
   border: "1px solid white",
 };
 
+const initData = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
+const initState = { values: initData };
 export default function Message() {
+  const [state, setState] = useState(initState);
+
+  const handleChange = (e) => {
+    return setState((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [e.target.dataset.tab]: e.target.value,
+      },
+    }));
+  };
+
+  const submit = async function (e) {
+    // console.log("clicked", state);
+
+    e.preventDefault();
+    try {
+      await sendContactForm(state.values);
+    } catch (error) {
+      alert("Message Not Sent");
+    }
+  };
+
   return (
     <div
       style={style}
@@ -83,6 +118,8 @@ export default function Message() {
                 type="text"
                 id="input"
                 required
+                data-tab="name"
+                onChange={handleChange}
               ></input>
               <label for="input" class="placeholder">
                 Your Name
@@ -94,6 +131,8 @@ export default function Message() {
                 type="text"
                 id="input"
                 required
+                data-tab="email"
+                onChange={handleChange}
               ></input>
               <label for="input" class="placeholder">
                 Your Email
@@ -106,7 +145,9 @@ export default function Message() {
               className=" bg-[#f0f0f0]  border-1 border-2 border-[#121b1b] xs:w-[290px] sm:w-[540px] md:w-[370px] lg:w-[430px] xl:w-[480px] 2xl:w-[540px]"
               type="text"
               id="input"
+              data-tab="subject"
               required
+              onChange={handleChange}
             ></input>
             <label for="input" className="placeholder">
               Your Subject
@@ -115,16 +156,17 @@ export default function Message() {
           <div class=" mt-6 ">
             <textarea
               className=" bg-[#f0f0f0] xs:w-[290px] sm:w-[540px] md:w-[370px] lg:w-[430px] xl:w-[480px] 2xl:w-[540px] border-1 border-2 border-[#121b1b] p-2"
-              type="text"
+              data-tab="message"
               rows={7}
               cols={10}
-              // id="input"
+              id="input"
               required
               placeholder="Your Message"
+              onChange={handleChange}
             ></textarea>
           </div>
 
-          <Button className="bg-[#121b1b] text-white w-6/12  " type="submit">
+          <Button className="bg-[#121b1b] text-white w-6/12  " onClick={submit}>
             Submit
           </Button>
         </form>

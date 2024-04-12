@@ -30,7 +30,20 @@ import {
 export default function NavAbout() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["Home", "About Us", "Blogs & Resources"];
+  const menuItems = [
+    {
+      page: "Home",
+      href: "/",
+    },
+    {
+      page: "About Us",
+      href: "/about",
+    },
+    {
+      page: "Blogs & Resources",
+      href: "/",
+    },
+  ];
 
   return (
     <NextUIProvider>
@@ -148,24 +161,26 @@ export default function NavAbout() {
         </NavbarContent>
 
         <NavbarMenu>
-          {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                className="w-full"
-                color={
-                  index === 2
-                    ? "warning"
-                    : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                href="#"
-                size="lg"
-              >
-                {item}
-              </Link>
-            </NavbarMenuItem>
-          ))}
+          {menuItems.map((link, index) => {
+            return (
+              <NavbarMenuItem key={`${link}-${index}`}>
+                <Link
+                  className="w-full"
+                  color={
+                    index === 2
+                      ? "warning"
+                      : index === menuItems.length - 1
+                      ? "danger"
+                      : "foreground"
+                  }
+                  href={`${link.href}`}
+                  size="lg"
+                >
+                  {link.page}
+                </Link>
+              </NavbarMenuItem>
+            );
+          })}
         </NavbarMenu>
       </Navbar>
     </NextUIProvider>

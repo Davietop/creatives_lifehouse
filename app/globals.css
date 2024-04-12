@@ -339,7 +339,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   flex-direction: column;
   gap: 1em;
   font-family: "Montserrat";
@@ -353,15 +353,14 @@ body {
   justify-content: center;
 }
 .splide__slide__container {
-  height: 120px;
-  aspect-ratio: 16/9;
-  background-color: red;
-  border-radius: 0.4em;
+  /* height: fit-content;
+  width: fit-content; */
+
   display: flex;
   align-items: end;
   cursor: pointer;
-  transition: background-color 250ms ease-in-out,
-    height 300ms var(--ease-bounce-1);
+  padding: 15px;
+  transition: background-color 250ms ease-in-out;
 }
 .splide__slide__container h1 {
   font-family: "Montserrat";
