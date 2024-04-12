@@ -15,7 +15,7 @@ import Squarespace from "../public/technologies/squarespace.png";
 import Webflow from "../public/technologies/webflow.png";
 // import Ahrefs from "../public/technologies/ahref.svg";
 import Semrush from "../public/technologies/semrush.png";
-import Mailchimp from "../public/technologies/Mailchimp_logo.png";
+import Mailchimp from "../public/technologies/mailchimp.png";
 import Image from "next/image";
 
 // hubspot, saleforce, go highlevel, zoho createMotionComponent,wordpress, wix, godaddy, squarespace, webflow, ahrefs, sm Rubik_Doodle_Shadow, mailchimp
