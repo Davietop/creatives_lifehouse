@@ -52,7 +52,7 @@ export default function Members() {
   return (
     <div
       className={cn(
-        "bg-line1 bg-cover bg-center bg-no-repeat pt-10 pb-10",
+        "bg-line1 bg-cover bg-center bg-no-repeat mt-6 pt-10 pb-10",
         fontSans.variable
       )}
     >

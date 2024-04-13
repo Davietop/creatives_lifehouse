@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <div
       className={cn(
-        "bg-[#121b1b]   pt-10  text-white w-full sm:h-full ",
+        "bg-[#121b1b]  mt-20 pt-10  text-white w-full sm:h-full ",
         poppins.className
       )}
     >

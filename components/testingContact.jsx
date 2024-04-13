@@ -16,9 +16,9 @@ const initData = {
   message: "",
 };
 const style2 = {
-  // background: "rgba(255, 255, 255,0.1)",
-  // backdropFilter: "blur(1.9px)",
-  // WebkitBackdropFilter: "blur(1.9px)",
+  background: "rgba(0, 0, 0,0.3)",
+  backdropFilter: "blur(1px)",
+  WebkitBackdropFilter: "blur(1px)",
 };
 
 const initState = { values: initData };
@@ -61,11 +61,11 @@ export default function ContactForm() {
   return (
     <div
       className={cn(
-        "bg-contact_bg3 bg-cover bg-no-repeat bg-center flex flex-col  mt-16   ",
+        "bg-contact_bg17 bg-cover bg-no-repeat bg-center flex flex-col  mt-16    ",
         fontSans.className
       )}
     >
-      <div style={style2} className="pb-20">
+      <div style={style2} className="pb-10">
         <div className="flex gap-4 ml-6 md:ml-10 xl:ml-20  ">
           <div className="flex mt-10 items-center justify-center ">
             <div
@@ -85,19 +85,19 @@ export default function ContactForm() {
           </div>
           <h1
             className={cn(
-              "decoration-4 font-[700]   text-center sm:text-lg xs:text-base md:text-xl mt-10"
+              "text-white decoration-4 font-[700]   text-center sm:text-lg xs:text-base md:text-xl mt-10"
             )}
           >
             Contact Us
           </h1>
         </div>
-        <div className="w-10/12 xl:w-9/12 mx-auto">
+        <div className="text-white w-10/12 xl:w-9/12 mx-auto">
           <div className="mt-6 text-base">
-            <p className="font-[500] text-base md:text-lg">
+            <p className="font-[500] xs:text-sm text-base md:text-lg">
               Is the answer to your question missing?
             </p>
 
-            <p>Get In touch with us</p>
+            <p className="xs:text-xs sm:text-sm">Get In touch with us</p>
           </div>
 
           <div className="flex justify-between gap-10  w-full md:mt-20 xs:mt-10 ">
@@ -116,16 +116,17 @@ export default function ContactForm() {
               </div>
             </div>
             <div className="form w-5/12 xs:w-full  md:w-6/12">
-              <div className="w-full flex flex-col">
+              <div className="w-full flex text-xs flex-col">
                 {variants.map((variant) => (
                   <div
                     key={variant}
-                    className="flex flex-col w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 xs:gap-4 md:gap-10"
+                    className="flex flex-col w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 xs:gap-4 md:gap-10 "
                   >
                     <Input
-                      className="inputbox"
+                      className="inputbox "
                       style={{
                         borderBottomStyle: "none",
+                        color: "white",
                       }}
                       type="name"
                       variant={variant}
@@ -134,9 +135,10 @@ export default function ContactForm() {
                       onChange={handleChange}
                     />
                     <Input
-                      className="inputbox"
+                      className="inputbox "
                       style={{
                         borderBottomStyle: "none",
+                        color: "white",
                       }}
                       type="email"
                       variant={variant}
@@ -145,9 +147,10 @@ export default function ContactForm() {
                       onChange={handleChange}
                     />
                     <Input
-                      className="inputbox"
+                      className="inputbox "
                       style={{
                         borderBottomStyle: "none",
+                        color: "white",
                       }}
                       type="subject"
                       variant={variant}
@@ -164,9 +167,9 @@ export default function ContactForm() {
                           key={variant}
                           variant={variant}
                           label="Description"
-                          labelPlacement="outside"
+                          labelPlacement="inside"
                           placeholder="Enter your description"
-                          className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 inputbox"
+                          className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 inputbox text-white"
                         />
                       ))}
                     </div>

@@ -60,8 +60,8 @@ export default function Slide() {
                   <li key={i} className="splide__slide ">
                     <div className="splide__slide__container w-[500px]">
                       <Image
-                        width={100}
-                        height={100}
+                        width={900}
+                        height={900}
                         src={data}
                         className="xs:w-[900px] sm:w-[500px] md:w-[140px]"
                         alt="hello"
