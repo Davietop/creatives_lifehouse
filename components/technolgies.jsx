@@ -55,11 +55,13 @@ export default function Slide() {
         <section className="splide" aria-label="Basic Structure Example">
           <div className="splide__track">
             <ul className="splide__list ">
-              {src.map((data) => {
+              {src.map((data, i) => {
                 return (
-                  <li className="splide__slide ">
+                  <li key={i} className="splide__slide ">
                     <div className="splide__slide__container w-[500px]">
-                      <img
+                      <Image
+                        width={100}
+                        height={100}
                         src={data}
                         className="xs:w-[900px] sm:w-[500px] md:w-[140px]"
                         alt="hello"
