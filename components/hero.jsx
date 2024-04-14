@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
 
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -37,7 +38,7 @@ export default function HeroSection() {
             fontSans.variable
           )}
         >
-          Get Started.
+          <Link href="#contact">Get Started</Link>
         </Button>
       </div>
     </div>

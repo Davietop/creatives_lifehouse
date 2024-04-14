@@ -17,6 +17,7 @@ import Webflow from "../public/technologies/webflow.png";
 import Semrush from "../public/technologies/semrush.png";
 import Mailchimp from "../public/technologies/mailchimp.png";
 import Image from "next/image";
+import { fontSans } from "@/fonts";
 
 // hubspot, saleforce, go highlevel, zoho createMotionComponent,wordpress, wix, godaddy, squarespace, webflow, ahrefs, sm Rubik_Doodle_Shadow, mailchimp
 
@@ -45,13 +46,21 @@ export default function Slide() {
       arrows: false,
       pagination: false,
       focus: "center",
+      speed: 200,
     });
 
     splide.mount({ AutoScroll });
   });
   return (
-    <div className="mt-10">
-      <div className="app">
+    <div className="mt-10 flex items-center justify-center flex-col">
+      <h1
+        className={
+          ("font-bold xs:text-xs sm:text-sm md:text-base", fontSans.className)
+        }
+      >
+        Technologies we work with
+      </h1>
+      <div className="app mt-6">
         <section className="splide" aria-label="Basic Structure Example">
           <div className="splide__track">
             <ul className="splide__list ">
@@ -59,9 +68,7 @@ export default function Slide() {
                 return (
                   <li key={i} className="splide__slide ">
                     <div className="splide__slide__container w-[500px]">
-                      <Image
-                        width={900}
-                        height={900}
+                      <img
                         src={data}
                         className="xs:w-[900px] sm:w-[500px] md:w-[140px]"
                         alt="hello"

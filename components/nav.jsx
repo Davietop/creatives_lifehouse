@@ -100,7 +100,7 @@ export default function NavBar() {
 
         <NavbarContent justify="end">
           <NavbarItem className="hidden xl:flex">
-            <Button as={Link} color="warning" href="#" variant="flat">
+            <Button as={Link} color="warning" href="#contact" variant="flat">
               Get Started
             </Button>
           </NavbarItem>

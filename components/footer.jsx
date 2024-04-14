@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <div
       className={cn(
-        "bg-[#121b1b]  mt-20 pt-10  text-white w-full sm:h-full ",
+        "bg-[#121b1b]  pt-10  text-white w-full sm:h-full ",
         poppins.className
       )}
     >
@@ -51,7 +51,7 @@ export default function Footer() {
                 Lagos, Nigeria
               </p>
               <p className="pb-2">+(234) 903-224-5613</p>
-              <p className="pb-2">info@lifehouse.com</p>
+              <p className="pb-2">info@lifehousecreatives.com</p>
             </div>
           </div>
 
@@ -61,16 +61,13 @@ export default function Footer() {
             </h3>
 
             <div className="link flex text-lg text-sm flex-col sm:text-sm mt-4 2sm:text-sm sm:text-xs md:text-base lg:text-base xl:text-base 2xl:text-base">
-              <Link className="self-end pb-2" href="/books/index.html">
+              <Link className="self-end pb-2" href="/">
                 Home
               </Link>
-              <Link
-                className="self-end pb-2"
-                href="https://us21.list-manage.com/contact-form?u=6a004bac8b03c554aa5552455&form_id=867b325a9be4d8d51c99190d46fa2c47"
-              >
+              <Link className="self-end pb-2" href="/about">
                 About us
               </Link>
-              <Link className="text-right w-full pb-2" href="/blog/index.html">
+              <Link className="text-right w-full pb-2" href="/">
                 Blogs
               </Link>
             </div>
@@ -78,8 +75,8 @@ export default function Footer() {
         </div>
 
         <hr className="w-[70%] mx-auto" />
-        <div className="copy text-base text-sm flex items-center justify-around mt-4 sm:text-xs 2sm:text-sm">
-          <p>Copyright &copy 2023. All rights reserved.</p>
+        <div className="copy text-base text-sm flex items-center justify-around mt-4 sm:text-xs 2sm:text-sm md:text-base">
+          <p>Copyright &copy 2024. All rights reserved.</p>
         </div>
       </div>
     </div>

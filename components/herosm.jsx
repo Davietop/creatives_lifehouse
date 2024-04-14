@@ -6,7 +6,7 @@ import { Button } from "@nextui-org/react";
 import { fontSans, poppins } from "@/fonts";
 import { cn } from "@/lib/utils";
 import localFont from "next/font/local";
-
+import Link from "next/link";
 export default function HeroSectionsm() {
   return (
     <div className="md:hidden lg:hidden xl:hidden 2xl:hidden bg-bg_img h-[450px] bg-center bg-cover shadow">
@@ -33,7 +33,7 @@ export default function HeroSectionsm() {
               fontSans.variable
             )}
           >
-            Get Started.
+            <Link href="#contact">Get Started</Link>
           </Button>
         </div>
       </div>

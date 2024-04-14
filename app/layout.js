@@ -10,6 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <link
+        rel="stylesheet"
+        href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+      ></link>
       <body className={cn("bg-white  antialiased", fontSans.variable)}>
         {children}
       </body>

@@ -17,8 +17,8 @@ const initData = {
 };
 const style2 = {
   background: "rgba(0, 0, 0,0.3)",
-  backdropFilter: "blur(1px)",
-  WebkitBackdropFilter: "blur(1px)",
+  // backdropFilter: "blur(1px)",
+  // WebkitBackdropFilter: "blur(1px)",
 };
 
 const initState = { values: initData };
@@ -60,6 +60,7 @@ export default function ContactForm() {
 
   return (
     <div
+      id="contact"
       className={cn(
         "bg-contact_bg17 bg-cover bg-no-repeat bg-center flex flex-col  mt-16    ",
         fontSans.className
@@ -104,15 +105,11 @@ export default function ContactForm() {
             <div className="xs:hidden md:flex information w-4/12  flex flex-col gap-8 md:w-5/12 ">
               <div className="flex flex-col gap-2">
                 <p className="font-[500]">EMAIL</p>
-                <p>info@lifehouse.com</p>
+                <p>info@lifehousecreatives.com</p>
               </div>
               <div className="flex flex-col gap-2">
                 <p className="font-[500]">PHONE</p>
-                <p>09045308923</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="font-[500]">MEETING HOURS</p>
-                <p>Monday to Friday 9:00AM - 8:00PM</p>
+                <p>+(234) 903-224-5613</p>
               </div>
             </div>
             <div className="form w-5/12 xs:w-full  md:w-6/12">
@@ -123,7 +120,7 @@ export default function ContactForm() {
                     className="flex flex-col w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 xs:gap-4 md:gap-10 "
                   >
                     <Input
-                      className="inputbox "
+                      className="inputbox .placeholder-teal-300::placeholder "
                       style={{
                         borderBottomStyle: "none",
                         color: "white",
@@ -147,10 +144,11 @@ export default function ContactForm() {
                       onChange={handleChange}
                     />
                     <Input
-                      className="inputbox "
+                      className="inputbox  text-white "
                       style={{
                         borderBottomStyle: "none",
                         color: "white",
+                        "::placeholder": "white",
                       }}
                       type="subject"
                       variant={variant}
@@ -166,9 +164,9 @@ export default function ContactForm() {
                           minRows={6}
                           key={variant}
                           variant={variant}
-                          label="Description"
+                          label="Your Message"
                           labelPlacement="inside"
-                          placeholder="Enter your description"
+                          placeholder="I would like to get in touch with lifhouse creatives team"
                           className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 inputbox text-white"
                         />
                       ))}

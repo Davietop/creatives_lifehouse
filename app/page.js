@@ -2,6 +2,7 @@
 
 import { AccordionDemo } from "@/components/accordion";
 import Message from "@/components/callback";
+import Clients from "@/components/business_parteners";
 import Faq from "@/components/faq";
 import Footer from "@/components/footer";
 import HeroSection from "@/components/hero";
@@ -13,6 +14,7 @@ import Slide from "@/components/technolgies";
 import Technology from "@/components/technolgies";
 import ContactForm from "@/components/testingContact";
 import Image from "next/image";
+import Business from "@/components/business_parteners";
 
 export default function Home() {
   return (
@@ -26,9 +28,12 @@ export default function Home() {
           <HeroSectionsm />
         </div>
       </main>
+
       <Services />
-      <Slide />
+
       <Members />
+
+      <Slide />
 
       <Faq />
 

@@ -41,7 +41,7 @@ export default function Information() {
     <div
       className={cn(
         " flex items-center justify-center relative z-10 flex-wrap gap-8 mt-16",
-        open_Sans.className
+        fontSans.className
       )}
     >
       {card.map((data, i) => {

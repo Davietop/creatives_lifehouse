@@ -61,6 +61,15 @@ module.exports = {
         bg_members_4: "url('../public/members/members_bg_4.jpg')",
         bg_members_5: "url('../public/members/members_bg_5.jpg')",
         bg_members_6: "url('../public/members/members_bg_6.jpg')",
+        team: "url('../public/team/team1.jpg')",
+        team2: "url('../public/team/team2.jpg')",
+        team3: "url('../public/team/team3.jpg')",
+        team4: "url('../public/team/team4.jpg')",
+        // team5: "url('../public/team/team5.jpg')",
+        team6: "url('../public/team/team6.jpg')",
+        team7: "url('../public/team/team7.png')",
+        team8: "url('../public/team/team8.jpg')",
+        team9: "url('../public/team/team9.jpg')",
       },
       keyframes: {
         "accordion-down": {
