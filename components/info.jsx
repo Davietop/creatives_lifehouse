@@ -29,12 +29,6 @@ const card = [
       " We are a cohesive team of digital marketers boasting extensive expertise in sales management facilitated by CRM utilization, proficient web development skills, and strategic content marketing proficiency",
     src: identity,
   },
-  {
-    title: "What we do?",
-    content:
-      " We strive for remarkable ROI, ensuring your ongoing investment in our effective solutions. As Certified Google and Facebook Partners, our expert team delivers results with comprehensive digital marketing plans.",
-    src: Service,
-  },
 ];
 export default function Information() {
   return (
@@ -44,6 +38,58 @@ export default function Information() {
         fontSans.className
       )}
     >
+      <Card
+        style={style}
+        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-[320px] sm:w-[320px] md:w-[350px] xl:w-[400px] rounded-xl shadow  "
+      >
+        <div className="circle2 "></div>
+        <CardHeader>
+          <div className="flex md:text-base xs:text-sm items-center justify-center flex-col gap-6">
+            <CardTitle className="text-center font-bold">What we do?</CardTitle>
+            <CardDescription>
+              <Image src={Service.src} alt="image" width={200} height={200} />
+            </CardDescription>
+          </div>
+          <CardDescription className="xs:text-xs md:text-sm font-bold text-center"></CardDescription>
+        </CardHeader>
+        <CardContent
+          style={{
+            position: "relative",
+            "z-index": "100px",
+          }}
+          className="  xs:text-xs sm:text-xs  md:text-base "
+        >
+          <p>
+            We strive for remarkable ROI, ensuring your ongoing investment in
+            our effective solutions.
+          </p>
+          <div
+            className={cn(
+              "flex xs:text-xs sm:text-xs md:text-sm justify-around items-center mt-4",
+              open_Sans.className
+            )}
+          >
+            <ol
+              style={{
+                listStyle: "dotted",
+              }}
+            >
+              <li>Email Marketing</li>
+              <li>Email Marketing</li>
+              <li>Email Marketing</li>
+            </ol>
+            <ul
+              style={{
+                listStyle: "dotted",
+              }}
+            >
+              <li>Email Marketing</li>
+              <li>Email Marketing</li>
+              <li>Email Marketing</li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
       {card.map((data, i) => {
         return (
           <Card

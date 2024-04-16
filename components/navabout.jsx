@@ -103,7 +103,7 @@ export default function NavAbout() {
 
         <NavbarContent justify="end">
           <NavbarItem className="hidden xl:flex">
-            <Button as={Link} color="warning" href="#" variant="flat">
+            <Button as={Link} color="warning" href="#contact" variant="flat">
               Get Started
             </Button>
           </NavbarItem>
@@ -149,7 +149,7 @@ export default function NavAbout() {
                         Email Now: <br />
                         <span className="ml-10  font-bold text-base">
                           {" "}
-                          Info@lifehouse.com
+                          info@lifehousecreatives.com
                         </span>
                       </h1>
                     </div>

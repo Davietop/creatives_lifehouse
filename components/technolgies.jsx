@@ -46,7 +46,7 @@ export default function Slide() {
       arrows: false,
       pagination: false,
       focus: "center",
-      speed: 200,
+      speed: 600,
     });
 
     splide.mount({ AutoScroll });

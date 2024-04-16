@@ -39,7 +39,7 @@ const src = [
 
 export default function Business() {
   useEffect(() => {
-    const splide2 = new Splide(".splide2", {
+    const splide2 = new Splide(".splide", {
       type: "loop",
       perPage: 4,
       arrows: false,
@@ -61,13 +61,13 @@ export default function Business() {
         >
           Trusted Clients
         </h1>
-        <section className="splide2" aria-label="Basic Structure Example">
+        <section className="splide" aria-label="Basic Structure Example">
           <div className="splide__track">
             <ul className="splide__list ">
               {src.map((data, i) => {
                 return (
-                  <li key={i} className="splide__slide2 ">
-                    <div className="splide__slide__container2 w-[500px]">
+                  <li key={i} className="splide__slide">
+                    <div className="splide__slide__container w-[500px]">
                       <img
                         src={data}
                         className="xs:w-[900px] sm:w-[500px] md:w-[140px]"

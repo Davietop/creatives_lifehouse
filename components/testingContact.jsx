@@ -62,7 +62,7 @@ export default function ContactForm() {
     <div
       id="contact"
       className={cn(
-        "bg-contact_bg17 bg-cover bg-no-repeat bg-center flex flex-col  mt-16    ",
+        "bg-bg_members_5 bg-cover bg-no-repeat bg-center flex flex-col  mt-16    ",
         fontSans.className
       )}
     >
@@ -120,10 +120,9 @@ export default function ContactForm() {
                     className="flex flex-col w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 xs:gap-4 md:gap-10 "
                   >
                     <Input
-                      className="inputbox .placeholder-teal-300::placeholder "
+                      className="inputbox"
                       style={{
                         borderBottomStyle: "none",
-                        color: "white",
                       }}
                       type="name"
                       variant={variant}
@@ -135,7 +134,6 @@ export default function ContactForm() {
                       className="inputbox "
                       style={{
                         borderBottomStyle: "none",
-                        color: "white",
                       }}
                       type="email"
                       variant={variant}
@@ -144,11 +142,10 @@ export default function ContactForm() {
                       onChange={handleChange}
                     />
                     <Input
-                      className="inputbox  text-white "
+                      className="inputbox text-2xl   "
                       style={{
                         borderBottomStyle: "none",
-                        color: "white",
-                        "::placeholder": "white",
+                        borderBottomColor: "red",
                       }}
                       type="subject"
                       variant={variant}
@@ -167,7 +164,7 @@ export default function ContactForm() {
                           label="Your Message"
                           labelPlacement="inside"
                           placeholder="I would like to get in touch with lifhouse creatives team"
-                          className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 inputbox text-white"
+                          className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 text-black inputbox "
                         />
                       ))}
                     </div>

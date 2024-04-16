@@ -17,7 +17,7 @@ export default function Footer() {
       )}
     >
       <div className="">
-        <div className="flex items-center flex-col">
+        <div className="flex items-center justify-around ">
           <Image
             className="xs:flex md:hidden"
             width={100}
@@ -33,7 +33,7 @@ export default function Footer() {
             src={logo.src}
           />
 
-          <div className="socials flex items-center  gap-10 mt-4 ">
+          <div className="socials flex items-center  gap-6 mt-4 ">
             <Image width={20} height={20} alt="facebook" src={facebook.src} />
             <Image width={20} height={20} alt="google" src={google.src} />
             <Image width={20} height={20} alt="twitter" src={twitter.src} />
@@ -76,7 +76,7 @@ export default function Footer() {
 
         <hr className="w-[70%] mx-auto" />
         <div className="copy text-base text-sm flex items-center justify-around mt-4 sm:text-xs 2sm:text-sm md:text-base">
-          <p>Copyright &copy 2024. All rights reserved.</p>
+          <p>Copyright & copy 2024. All rights reserved.</p>
         </div>
       </div>
     </div>

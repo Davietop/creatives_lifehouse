@@ -140,7 +140,7 @@ export default function NavBar() {
                         Email Now: <br />
                         <span className="ml-10  font-bold text-base">
                           {" "}
-                          Info@lifehouse.com
+                          info@lifehousecreatives.com
                         </span>
                       </h1>
                     </div>
