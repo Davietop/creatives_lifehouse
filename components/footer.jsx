@@ -6,22 +6,22 @@ import twitter from "../public/socials/twitter.png";
 import logo from "../public/mainLogo.png";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { poppins } from "@/fonts";
+import { fontSans, poppins } from "@/fonts";
 
 export default function Footer() {
   return (
     <div
       className={cn(
         "bg-[#121b1b]  pt-10  text-white w-full sm:h-full ",
-        poppins.className
+        fontSans.className
       )}
     >
       <div className="">
         <div className="flex items-center justify-around ">
           <Image
             className="xs:flex md:hidden"
-            width={100}
-            height={100}
+            width={80}
+            height={80}
             alt="logo"
             src={logo.src}
           />
@@ -43,10 +43,10 @@ export default function Footer() {
 
         <div className="information mt-4 p-6 flex justify-around sm:justify-around 2sm:justify-around md:justify-around lg:justify-around xl:justify-around 2xl:justify-around">
           <div className="connect">
-            <h3 className="font-[600] text-lg sm:text-base 2sm:text-base md:text-base xl:text-lg 2xl:text-lg">
+            <h3 className="font-[600] text-lg xs:text-sm sm:text-base 2sm:text-base md:text-base xl:text-lg 2xl:text-lg">
               Connect
             </h3>
-            <div className="conp text-lg xs:text-sm sm:text-xs mt-4 2sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-base">
+            <div className="conp text-lg xs:text-xs sm:text-sm mt-4 2sm:text-sm md:text-base lg:text-base xl:text-base 2xl:text-base">
               <p className="text_address w-[85%] pb-2 sm:w-[65%] md:w-[85%]">
                 Lagos, Nigeria
               </p>
@@ -56,11 +56,11 @@ export default function Footer() {
           </div>
 
           <div className="">
-            <h3 className="font-[600] text-lg sm:text-base 2sm:text-base md:text-base xl:text-lg 2xl:text-lg">
+            <h3 className="font-[600] text-lg xs:text-sm sm:text-base 2sm:text-base md:text-base xl:text-lg 2xl:text-lg">
               Navigation
             </h3>
 
-            <div className="link flex text-lg text-sm flex-col sm:text-sm mt-4 2sm:text-sm sm:text-xs md:text-base lg:text-base xl:text-base 2xl:text-base">
+            <div className="link flex text-lg text-sm flex-col xs:text-xs sm:text-sm mt-4 2sm:text-sm sm:text-xs md:text-base lg:text-base xl:text-base 2xl:text-base">
               <Link className="self-end pb-2" href="/">
                 Home
               </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
         <hr className="w-[70%] mx-auto" />
-        <div className="copy text-base text-sm flex items-center justify-around mt-4 sm:text-xs 2sm:text-sm md:text-base">
+        <div className="copy text-base text-sm flex items-center justify-around mt-4 xs:text-xs sm:text-xs 2sm:text-sm md:text-base">
           <p>Copyright & copy 2024. All rights reserved.</p>
         </div>
       </div>

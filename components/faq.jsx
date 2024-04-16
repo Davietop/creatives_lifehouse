@@ -113,7 +113,7 @@ export default function Faq() {
           FAQ
         </h1>
       </div>
-      <div className={cn("text-center  text-bold  ", fontSans.variable)}>
+      <div className={cn("text-center  text-bold  ", fontSans.className)}>
         {/* <h1 className="text-2xl font-bold">Hi, We're here to help you</h1> */}
         <div className="border-0 shadow mt-6 sm:w-10/12 xs:w-11/12 w-10/12 md:w-8/12 lg:w-7/12 xl:w-6/12 mx-auto border p-2 rounded-lg flex items-center justify-center gap-6">
           <Image src={search.src} width={20} height={20} alt="search" />
@@ -246,7 +246,7 @@ export default function Faq() {
               key={index}
               className={cn(
                 "questions sm:w-10/12  w-11/12 md:w-10/12 lg:w-8/12 xl:w-7/12 mx-auto sm:mx-auto md:mx-auto",
-                fontSans.variable
+                fontSans.className
               )}
             >
               <AccordionDemo queries={data} value={index} />
@@ -258,7 +258,7 @@ export default function Faq() {
       <div
         className={cn(
           "md:hidden text-center mt-10 w-10/12 mx-auto",
-          fontSans.variable
+          fontSans.className
         )}
       >
         <h1 className="text-lg font-bold mb-6">You still have a question?</h1>
@@ -266,46 +266,6 @@ export default function Faq() {
           If you can not find what you are looking for, click contact Lifehouse
           creatives support below
         </p>
-        <div className="flex items-center flex-wrap mt-6 gap-6 xs:gap-4 justify-center">
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 xs:pt-4 md:p-4 justify-center  flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
-            <Image
-              className="xs:hidden md:flex"
-              src={mail.src}
-              width={64}
-              height={64}
-              alt="mail"
-              objectFit="contain"
-            />
-            <Image
-              className="xs:flex md:hidden"
-              src={mail.src}
-              width={30}
-              height={30}
-              alt="mail"
-              objectFit="contain"
-            />
-            <h4 className="font-bold text-xs mt-2 mb-2">info@lifehouse.com</h4>
-          </div>
-          <div className="bg-[#9e591b] text-white cursor-pointer shadow w-fit xs:gap-2   xs:p-2 xs:pt-4 md:p-4 justify-center   md:p-4   flex items-center flex-col gap-4 xs:gap-1 rounded-xl">
-            <Image
-              className="xs:hidden md:flex"
-              src={mail.src}
-              width={64}
-              height={64}
-              alt="mail"
-              objectFit="contain"
-            />
-            <Image
-              className="xs:flex md:hidden"
-              src={phone.src}
-              width={30}
-              height={30}
-              alt="mail"
-              objectFit="contain"
-            />
-            <h4 className="font-bold text-xs mt-2 mb-2">+(234) 903-224-5613</h4>
-          </div>
-        </div>
       </div>
     </div>
   );

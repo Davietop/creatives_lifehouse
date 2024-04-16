@@ -95,10 +95,8 @@ export default function ContactForm() {
         <div className="text-white w-10/12 xl:w-9/12 mx-auto">
           <div className="mt-6 text-base">
             <p className="font-[500] xs:text-sm text-base md:text-lg">
-              Is the answer to your question missing?
+              Get In touch with us
             </p>
-
-            <p className="xs:text-xs sm:text-sm">Get In touch with us</p>
           </div>
 
           <div className="flex justify-between gap-10  w-full md:mt-20 xs:mt-10 ">
