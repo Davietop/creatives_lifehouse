@@ -17,8 +17,8 @@ const initData = {
 };
 const style2 = {
   background: "rgba(0, 0, 0,0.3)",
-  // backdropFilter: "blur(1px)",
-  // WebkitBackdropFilter: "blur(1px)",
+  backdropFilter: "blur(5px)",
+  WebkitBackdropFilter: "blur(5px)",
 };
 
 const initState = { values: initData };
@@ -62,7 +62,7 @@ export default function ContactForm() {
     <div
       id="contact"
       className={cn(
-        "bg-bg_members_5 bg-cover bg-no-repeat bg-center flex flex-col  mt-16    ",
+        "bg-bg_members_5 bg-cover bg-no-repeat bg-left  flex flex-col  mt-16",
         fontSans.className
       )}
     >

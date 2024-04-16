@@ -53,7 +53,7 @@ export default function Members() {
     <div
       className={cn(
         "bg-line1 bg-cover bg-center bg-no-repeat mt-6 pt-10 pb-10",
-        fontSans.variable
+        fontSans.className
       )}
     >
       <div className="flex gap-4 ml-6 md:ml-20">
