@@ -41,7 +41,7 @@ export default function NavAbout() {
     },
     {
       page: "Blogs & Resources",
-      href: "/blog",
+      href: "/",
     },
   ];
 
