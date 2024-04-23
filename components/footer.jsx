@@ -34,10 +34,28 @@ export default function Footer() {
           />
 
           <div className="socials flex items-center  gap-6 mt-4 ">
-            <Image width={20} height={20} alt="facebook" src={facebook.src} />
-            <Image width={20} height={20} alt="google" src={google.src} />
-            <Image width={20} height={20} alt="twitter" src={twitter.src} />
-            <Image width={20} height={20} alt="linkedin" src={linkedin.src} />
+            <Link href="https://www.linkedin.com/company/lifehouse-creatives/">
+              {" "}
+              <Image width={20} height={20} alt="linkedin" src={linkedin.src} />
+            </Link>
+            <Link href="info@lifehousecreatives.com">
+              <Image width={20} height={20} alt="google" src={google.src} />
+            </Link>
+
+            <Link href="facebook.com/lifehousecreatives">
+              {" "}
+              <Image
+                width={20}
+                height={20}
+                alt="facebook"
+                src={facebook.src}
+              />{" "}
+            </Link>
+
+            <Link href="twitter.com/lifehouse_creatives">
+              {" "}
+              <Image width={20} height={20} alt="twitter" src={twitter.src} />
+            </Link>
           </div>
         </div>
 

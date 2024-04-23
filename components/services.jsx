@@ -7,13 +7,6 @@ import Crm from "../public/crm.jpg";
 
 const card = [
   {
-    title: "Marketing Automation & Sales Management.",
-    description: "Automate engagement for personalized outreach.",
-    content:
-      "Levearge automation to add leads to pipelines, tag contacts, send automated email sequences and monitor replies within your CRM",
-    src: Email,
-  },
-  {
     title: "Digital Marketing.",
     description:
       "Optimize outreach, amplify brand visibility, and enhance engagement.",
@@ -27,6 +20,13 @@ const card = [
     content:
       "We implement an all-inclusive CRM system that helps you manage your business contact, pipeline, funnel and monitor marketing performance",
     src: Crm,
+  },
+  {
+    title: "Marketing Automation & Sales Management.",
+    description: "Automate engagement for personalized outreach.",
+    content:
+      "Levearge automation to add leads to pipelines, tag contacts, send automated email sequences and monitor replies within your CRM",
+    src: Email,
   },
 ];
 

@@ -83,7 +83,7 @@ export default function Members() {
       </div>
 
       <div className="mt-4  text-xl  w-10/12 mx-auto sm:text-lg xs:text-xs md:text-lg  ">
-        <p>Behind the Brilliance: Unveiling Our Dream Team!</p>
+        <p>The Team Behind The Brilliance </p>
       </div>
 
       <div className="relative mt-10 p-4 flex items-center justify-center gap-7 flex-wrap">

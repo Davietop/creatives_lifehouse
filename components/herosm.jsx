@@ -23,7 +23,7 @@ export default function HeroSectionsm() {
 
           <p className="text-white text-xs w-10/12 p-4 text-center">
             Learn how we combine CRM and content to deliver excellent sales and
-            marketing solutions.
+            marketing results.
           </p>
 
           <Button
