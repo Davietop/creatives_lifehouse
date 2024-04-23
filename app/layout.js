@@ -3,7 +3,7 @@ import "./globals.css";
 import { fontSans, poppins } from "@/fonts";
 
 export const metadata = {
-  title: "Life House",
+  title: "LifeHouse Creatives Digital Agency",
   description: "Created by Davietop",
 };
 

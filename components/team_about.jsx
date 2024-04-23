@@ -1,7 +1,7 @@
 import { fontSans, open_Sans, poppins } from "@/fonts";
 import { cn } from "@/lib/utils";
 import Founder from "../public/timi2.png";
-import Hod from "../public/fiyin_1_test.png";
+import Hod from "../public/preyo.png";
 import CoFounder from "../public/miss2.png";
 import Image from "next/image";
 import {
@@ -26,7 +26,7 @@ const members = [
   },
   {
     name: "Oyatoye Fiyinfoluwa",
-    src: CoFounder.src,
+    src: Hod.src,
     post: "Operations Head",
   },
 ];
@@ -110,7 +110,7 @@ export default function TeamAbout() {
         </div>{" "}
         <div className="w-full mt-6  flex items-center h-fit  justify-around xs:flex-col md:flex-row lg:flex-row">
           <div className="w-3/12 md:hidden xs:w-7/12 sm:w-6/12  md:w-4/12 lg:w-4/12 xl:w-3/12 img  ">
-            <Image src={CoFounder.src} width={400} height={400} alt="helo" />
+            <Image src={Hod.src} width={400} height={400} alt="helo" />
           </div>
           <div
             className={cn(
@@ -134,7 +134,7 @@ export default function TeamAbout() {
             imperdiet non id leo.
           </div>
           <div className="w-3/12 xs:hidden md:flex xs:w-7/12 sm:w-6/12  md:w-4/12 lg:w-4/12 xl:w-3/12 img">
-            <Image src={CoFounder.src} width={400} height={400} alt="helo" />
+            <Image src={Hod.src} width={400} height={400} alt="helo" />
           </div>
         </div>{" "}
         <div className="w-full mt-6  flex items-center h-fit  justify-around xs:flex-col md:flex-row lg:flex-row">

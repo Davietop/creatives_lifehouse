@@ -41,7 +41,7 @@ export default function NavAbout() {
     },
     {
       page: "Blogs & Resources",
-      href: "/",
+      href: "/blog",
     },
   ];
 
@@ -95,7 +95,7 @@ export default function NavAbout() {
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="#" aria-current="page">
+            <Link href="/blog" aria-current="page">
               Blog & Resources
             </Link>
           </NavbarItem>

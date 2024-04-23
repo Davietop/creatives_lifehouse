@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Image } from "@nextui-org/react";
 import Founder from "../public/timi.png";
-import Hod from "../public/fiyin_1_test.png";
+import Hod from "../public/preyo.png";
 import CoFounder from "../public/miss.png";
 
 import Link from "next/link";
@@ -91,7 +91,7 @@ export default function Members() {
           return (
             <Card
               key={i}
-              className="content border-1 border-[#121b1b]  bg-bg_members_6 bg-cover bg-center bg-no-repeat   w-fit  "
+              className="content border-1 border-[#121b1b]  bg-bg_members_6 bg-cover bg-bottom bg-no-repeat   h-[350px] w-fit  "
             >
               <div className="content-overlay"></div>
               <Image
