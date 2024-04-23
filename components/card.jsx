@@ -36,7 +36,7 @@ export function CardWithForm({ data }) {
           {data.description}
         </CardDescription>
       </CardHeader>
-      <CardContent className=" text-center  xs:text-xs sm:text-xs  md:text-sm ">
+      <CardContent className=" text-center  xs:text-xs sm:text-xs  md:text-xs ">
         {data.content}
       </CardContent>
     </Card>

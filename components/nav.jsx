@@ -75,7 +75,7 @@ export default function NavBar() {
           <NavbarBrand>
             <Image
               alt="image"
-              className="lg:w-[100px]"
+              className="sm:w-[70px] md:w-[70px] lg:w-[100px]"
               src={logo}
               width={120}
               height={120}

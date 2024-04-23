@@ -16,7 +16,7 @@ export default function HeroSection() {
       style={styles}
       className="relative mx-auto flex flex-col justify-center w-full h-[500px] md:h-[400px]  lg:h-[500px] xl:h-[550px]  "
     >
-      <div className="md:h-[400px] lg:h-[500px] xl:h-[550px]  flex  flex-col justify-center gap-6 md:absolute md:left-[80px] md:top-[-10px] lg:absolute lg:left-[80px] xl:absolute xl:left-[80px]  ">
+      <div className="md:h-[400px] lg:h-[500px] xl:h-[550px]  flex  flex-col justify-center gap-6 md:absolute md:left-[60px] md:top-[-10px] lg:absolute lg:left-[80px] xl:absolute xl:left-[80px]  ">
         <h2
           className={cn(
             "md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl md:w-[450px] lg:w-[500px] xl:w-[600px] text-white font-bold leadng-loose tracking-[2x]",
