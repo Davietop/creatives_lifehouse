@@ -21,7 +21,7 @@ export default function Home() {
     <div>
       <NavBar />
       <main>
-        <div className="xs:hidden sm:hidden md:flex h-[600px] w-full bg-bg_test2 bg-cover bg-left bg-no-repeat md:h-[400px] lg:h-[500px] xl:h-[600px] ">
+        <div className="xs:hidden sm:hidden md:flex h-[600px] w-full bg-bg_test2 bg-cover bg-center bg-no-repeat md:h-[400px] lg:h-[500px] xl:h-[550px] ">
           <HeroSection />
         </div>
         <div>
