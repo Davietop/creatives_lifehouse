@@ -57,7 +57,7 @@ export default function Information() {
             position: "relative",
             "z-index": "100px",
           }}
-          className="  xs:text-xs sm:text-xs  md:text-base "
+          className="  xs:text-xs sm:text-xs  md:text-sm "
         >
           <p>
             We strive for remarkable ROI, ensuring your ongoing investment in
@@ -65,7 +65,7 @@ export default function Information() {
           </p>
           <div
             className={cn(
-              "flex xs:text-xs sm:text-xs md:text-sm justify-around items-center mt-4",
+              "flex xs:text-xs sm:text-xs md:text-xs justify-around items-center mt-4",
               open_Sans.className
             )}
           >
@@ -116,7 +116,7 @@ export default function Information() {
                 position: "relative",
                 "z-index": "100px",
               }}
-              className=" text-center  xs:text-xs sm:text-xs  md:text-base "
+              className=" text-center  xs:text-xs sm:text-xs  md:text-sm "
             >
               {data.content}
             </CardContent>

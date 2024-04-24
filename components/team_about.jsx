@@ -69,7 +69,7 @@ export default function TeamAbout() {
         </div>
         <h2
           className={cn(
-            "w-10/12 xs:text-xs md:text-base mx-auto mt-6",
+            "w-10/12 xs:text-xs md:text-sm mx-auto mt-6",
             fontSans.className
           )}
         >
@@ -88,7 +88,7 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-base  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
@@ -114,7 +114,7 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-base  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
@@ -143,7 +143,7 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-base  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
