@@ -10,11 +10,11 @@ import Link from "next/link";
 export default function HeroSectionsm() {
   return (
     <div className="md:hidden lg:hidden xl:hidden 2xl:hidden bg-bg_img h-[450px] bg-center bg-cover shadow">
-      <div style={styles} className="h-[450px]   ">
-        <div className="relative top-[21px] flex items-center flex-col justify-center">
+      <div style={styles} className="h-[450px]    ">
+        <div className="relative top-[20px] flex items-center flex-col justify-center sm:w-10/12 mx-auto">
           <h2
             className={cn(
-              "xs:text-base sm:text-xl text-2xl w-11/12 p-1 text-white font-bold tracking-[2px] text-center",
+              "xs:text-lg  sm:text-xl text-2xl w-11/12 p-1 text-white font-bold tracking-[2px] text-center",
               poppins.variable
             )}
           >

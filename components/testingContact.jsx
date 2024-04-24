@@ -16,7 +16,7 @@ const initData = {
   message: "",
 };
 const style2 = {
-  background: "rgba(0, 0, 0,0.3)",
+  background: "rgba(0, 0, 0,0.7)",
   backdropFilter: "blur(10px)",
   WebkitBackdropFilter: "blur(10px)",
 };
@@ -118,9 +118,10 @@ export default function ContactForm() {
                     className="flex flex-col w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 xs:gap-4 md:gap-10 "
                   >
                     <Input
-                      className="inputbox"
+                      className="inputbox "
                       style={{
                         borderBottomStyle: "none",
+                        color: "white",
                       }}
                       type="name"
                       variant={variant}
@@ -132,6 +133,7 @@ export default function ContactForm() {
                       className="inputbox "
                       style={{
                         borderBottomStyle: "none",
+                        color: "white",
                       }}
                       type="email"
                       variant={variant}
@@ -144,6 +146,7 @@ export default function ContactForm() {
                       style={{
                         borderBottomStyle: "none",
                         borderBottomColor: "red",
+                        color: "white",
                       }}
                       type="subject"
                       variant={variant}
@@ -162,7 +165,7 @@ export default function ContactForm() {
                           label="Your Message"
                           labelPlacement="inside"
                           placeholder="I would like to get in touch with lifhouse creatives team"
-                          className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 text-black inputbox "
+                          className="col-span-12 md:col-span-6 mb-10 mt-6 md:mb-0 text-white inputbox "
                         />
                       ))}
                     </div>
