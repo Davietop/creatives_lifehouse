@@ -70,6 +70,7 @@ module.exports = {
         team7: "url('../public/team/team7.png')",
         team8: "url('../public/team/team8.jpg')",
         team9: "url('../public/team/team9.jpg')",
+        form: "url('../public/form.jpg')",
       },
       keyframes: {
         "accordion-down": {
