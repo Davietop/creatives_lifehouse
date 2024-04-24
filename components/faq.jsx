@@ -85,7 +85,7 @@ export default function Faq() {
   const checked = question.filter((data) => {
     return data.id === data2.id;
   });
-  console.log(checked);
+
   return (
     <div className="mt-10">
       <div className="flex gap-4 ml-6 md:ml-20">
@@ -215,7 +215,6 @@ export default function Faq() {
               width={64}
               height={64}
               alt="pricing"
-              objectFit="contain"
             />
             <Image
               className="xs:flex md:hidden"
@@ -223,7 +222,6 @@ export default function Faq() {
               width={32}
               height={32}
               alt="pricing"
-              objectFit="contain"
             />
             <p id="pricing" className="xs:text-xs md:text-sm font-bold ">
               Pricing
