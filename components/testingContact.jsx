@@ -17,8 +17,8 @@ const initData = {
 };
 const style2 = {
   background: "rgba(0, 0, 0,0.3)",
-  backdropFilter: "blur(5px)",
-  WebkitBackdropFilter: "blur(5spx)",
+  backdropFilter: "blur(10px)",
+  WebkitBackdropFilter: "blur(10px)",
 };
 
 const initState = { values: initData };

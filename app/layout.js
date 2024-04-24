@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
         rel="stylesheet"
         href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
       ></link>
+      <link href="/favicon.ico" rel="icon" sizes="any" />
       <body className={cn("bg-white  antialiased", fontSans.variable)}>
         {children}
       </body>
