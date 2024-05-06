@@ -95,7 +95,7 @@ export default function NavAbout() {
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="/blog" aria-current="page">
+            <Link href="/" aria-current="page">
               Blog & Resources
             </Link>
           </NavbarItem>

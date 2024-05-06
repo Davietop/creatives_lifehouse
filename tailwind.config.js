@@ -20,6 +20,12 @@ module.exports = {
       },
     },
     extend: {
+      boxShadow: {
+        "inset-custom": "inset 0 0 0 0.1rem rgb(25, 25, 25)",
+        "inset-custom4": "inset 0 0 0 0.1rem #dddddd",
+        "inset-custom3": "inset 0 0 0 0.1rem #9e591b",
+        "inset-custom2": "inset 0 0 0 0.2rem rgb(222, 222, 222)",
+      },
       screens: {
         xs: "320px",
 

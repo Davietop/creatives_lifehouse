@@ -4,6 +4,24 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 @import "https://cdn.jsdelivr.net/npm/open-props@1.6.17/open-props.min.css";
 
+.embla {
+  --slide-height: fit-content;
+  --slide-size: 100%;
+}
+
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+}
+.embla__slide__number {
+  height: var(--slide-height);
+}
+
+.embla__button:disabled {
+  color: var(--detail-high-contrast);
+}
+
 /* width */
 .scrolled::-webkit-scrollbar {
   width: 0.1px;
@@ -161,85 +179,6 @@
   }
 }
 
-/*  */
-
-/* .wrap {
-  overflow: hidden;
-}
-
-.carousel {
-  display: flex;
-  left: -100%;
-  list-style: none;
-  margin: 0; */
-/* padding: 0;
-  position: relative;
-  transform: translateX(100%);
-}
-@media (min-width: 30em) {
-  .carousel {
-    left: -33.33333%;
-    transform: translateX(33.33333%);
-  }
-}
-@media (min-width: 40em) {
-  .carousel {
-    left: -20%;
-    transform: translateX(20%);
-  }
-}
-
-.carousel.is-reversing {
-  transform: translateX(-100%);
-}
-@media (min-width: 30em) {
-  .carousel.is-reversing {
-    transform: translateX(-33.33333%);
-  }
-}
-@media (min-width: 40em) {
-  .carousel.is-reversing {
-    transform: translateX(-20%);
-  }
-}
-
-.carousel.is-set {
-  transform: none;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.carousel-seat {
-  background: #ddd;
-  flex: 1 0 100%;
-  order: 2;
-}
-.carousel-seat:nth-child(even) {
-  background: #d5d5d5;
-}
-@media (min-width: 30em) {
-  .carousel-seat {
-    flex-basis: 33.33333%;
-  }
-}
-@media (min-width: 40em) {
-  .carousel-seat {
-    flex-basis: 20%;
-  }
-}
-
-.carousel-seat.is-ref {
-  order: 1;
-}
-
-h2 {
-  color: #aaa;
-  font-size: 7em;
-  font-weight: normal;
-  margin: 0;
-  padding: 0.6em 0;
-  text-align: center;
-} */
-
 .input-wrapper {
   --padding: 6px;
   --focus-color: black;
@@ -377,3 +316,9 @@ body {
   transform: translateY(20px);
   transition: opacity 250ms ease-in-out, transform 250ms var(--ease-bounce-1);
 }
+
+/*  */
+
+/*  */
+
+/*  */
