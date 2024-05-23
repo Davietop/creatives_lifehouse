@@ -41,7 +41,7 @@ export default function NavBar() {
     },
     {
       page: "Blogs & Resources",
-      href: "/blog",
+      href: "",
     },
   ];
 
@@ -92,7 +92,7 @@ export default function NavBar() {
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
-            <Link href="/blog" aria-current="page">
+            <Link href="" aria-current="page">
               Blog & Resources
             </Link>
           </NavbarItem>

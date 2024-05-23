@@ -40,7 +40,7 @@ export default function Information() {
     >
       <Card
         style={style}
-        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat xs:w-11/12 sm:w-9/12  md:w-7/12 lg:w-5/12 xl:w-4/12 rounded-xl shadow  "
+        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat xs:w-11/12 sm:w-10/12  md:w-7/12 lg:w-5/12 xl:w-4/12  rounded-xl shadow  "
       >
         <div className="circle2 "></div>
         <CardHeader>
@@ -57,9 +57,9 @@ export default function Information() {
             position: "relative",
             "z-index": "100px",
           }}
-          className="  xs:text-xs sm:text-xs  md:text-sm "
+          className=" w-fit xs:text-xs sm:text-xs  md:text-sm "
         >
-          <p className="text-center">
+          <p className="text-center w-full">
             By leveraging the most effective digital technologies, we ensure
             your ongoing investment generates remarkable ROI.
           </p>

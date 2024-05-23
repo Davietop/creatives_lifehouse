@@ -69,7 +69,7 @@ export default function TeamAbout() {
         </div>
         <h2
           className={cn(
-            "w-10/12 xs:text-xs font-bold md:text-sm mx-auto mt-6",
+            "w-10/12 xs:text-xs  md:text-sm mx-auto mt-6",
             fontSans.className
           )}
         >
