@@ -88,7 +88,7 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10 font-bold text-sm xs:text-xs xs:text-center md:text-left sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10  text-sm xs:text-xs xs:text-center md:text-left sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
@@ -113,7 +113,7 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10 font-bold  text-sm xs:text-xs sm:text-sm xs:text-center md:text-left  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10   text-sm xs:text-xs sm:text-sm xs:text-center md:text-left  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
@@ -137,7 +137,7 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10 font-bold  text-sm xs:text-xs sm:text-sm xs:text-center md:text-left  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10   text-sm xs:text-xs sm:text-sm xs:text-center md:text-left  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
