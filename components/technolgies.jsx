@@ -42,7 +42,7 @@ export default function Slide() {
   useEffect(() => {
     const splide = new Splide(".splide", {
       type: "loop",
-      perPage: 3,
+      perPage: 4,
       arrows: false,
       pagination: false,
       focus: "center",

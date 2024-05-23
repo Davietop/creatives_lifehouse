@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 
 import { fontSans, poppins } from "@/fonts";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata = {
   title: "Lifehouse Creatives Digital Agency",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <link href="/favicon.ico" rel="icon" sizes="any" />
       <body className={cn("bg-white  antialiased", fontSans.variable)}>
         {children}
+        <Toaster />
       </body>
     </html>
   );

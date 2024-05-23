@@ -26,7 +26,7 @@ const card = [
   {
     title: "Who we are?",
     content:
-      " We are a cohesive team of digital marketers boasting extensive expertise in sales management facilitated by CRM utilization, proficient web development skills, and strategic content marketing proficiency",
+      " We are a team of sales and marketing experts providing scalable sales and marketing strategies that generate leads, drive engagement, conversions, and remarkable revenue.We work as or with your internal marketing team to build and implement thorough up-front digital strategies either continuously or instantaneously in a consulting capacity",
     src: identity,
   },
 ];
@@ -40,11 +40,11 @@ export default function Information() {
     >
       <Card
         style={style}
-        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-[320px] sm:w-[320px] md:w-[350px] xl:w-[400px] rounded-xl shadow  "
+        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat xs:w-11/12 sm:w-9/12  md:w-7/12 lg:w-5/12 xl:w-4/12 rounded-xl shadow  "
       >
         <div className="circle2 "></div>
         <CardHeader>
-          <div className="flex md:text-base xs:text-sm items-center justify-center flex-col gap-6">
+          <div className="flex md:text-base xs:text-sm items-center justify-center flex-col gap-6 xl:gap-2">
             <CardTitle className="text-center font-bold">What we do?</CardTitle>
             <CardDescription>
               <Image src={Service.src} alt="image" width={200} height={200} />
@@ -59,34 +59,28 @@ export default function Information() {
           }}
           className="  xs:text-xs sm:text-xs  md:text-sm "
         >
-          <p>
-            We strive for remarkable ROI, ensuring your ongoing investment in
-            our effective solutions.
+          <p className="text-center">
+            By leveraging the most effective digital technologies, we ensure
+            your ongoing investment generates remarkable ROI.
           </p>
           <div
             className={cn(
-              "flex xs:text-xs sm:text-xs md:text-xs justify-around items-center mt-4",
+              "flex xs:text-xs sm:text-xs md:text-xs justify-around items-center mt-4  sm:flex-row",
               open_Sans.className
             )}
           >
-            <ol
-              style={{
-                listStyle: "dotted",
-              }}
-            >
+            <ol className="">
+              <li>CRM Setup & Management</li>
               <li>Email Marketing</li>
-              <li>Email Marketing</li>
-              <li>Email Marketing</li>
+              <li> Sales and Marketing Strategy</li>
+              <li> Marketing Automation</li>
             </ol>
-            <ul
-              style={{
-                listStyle: "dotted",
-              }}
-            >
-              <li>Email Marketing</li>
-              <li>Email Marketing</li>
-              <li>Email Marketing</li>
-            </ul>
+            <ol>
+              <li>Sales Funnel Development</li>
+              <li>Website & Landing Page Design</li>
+              <li>SEO & Content Marketing</li>
+              <li>Social Media Marketing</li>
+            </ol>
           </div>
         </CardContent>
       </Card>
@@ -95,7 +89,7 @@ export default function Information() {
           <Card
             key={i}
             style={style}
-            className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat  xs:w-[320px] sm:w-[320px] md:w-[350px] xl:w-[400px] rounded-xl shadow  "
+            className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat xs:w-11/12 sm:w-9/12 md:w-7/12 lg:w-5/12 xl:w-4/12 rounded-xl shadow  "
           >
             <div className="circle2 "></div>
             <CardHeader>

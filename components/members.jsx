@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Image } from "@nextui-org/react";
 import Founder from "../public/timi.png";
-import Hod from "../public/preyo.png";
+import Hod from "../public/fiyin_Pic.png";
 import CoFounder from "../public/miss.png";
 
 import Link from "next/link";
@@ -42,9 +42,9 @@ const members = [
     post: "Creative Director",
   },
   {
-    name: "Oyatoye Fiyinfoluwa",
-    src: CoFounder.src,
-    post: "Operations Head",
+    name: "Samuel Oyatoye ",
+    src: Hod.src,
+    post: "Sales & Marketing Director",
   },
 ];
 

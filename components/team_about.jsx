@@ -1,7 +1,7 @@
 import { fontSans, open_Sans, poppins } from "@/fonts";
 import { cn } from "@/lib/utils";
 import Founder from "../public/timi2.png";
-import Hod from "../public/preyo.png";
+import Hod from "../public/fiyin_Pic.png";
 import CoFounder from "../public/miss2.png";
 import Image from "next/image";
 import {
@@ -25,9 +25,9 @@ const members = [
     post: "Creative Director",
   },
   {
-    name: "Oyatoye Fiyinfoluwa",
+    name: "Samuel Oyatoye ",
     src: Hod.src,
-    post: "Operations Head",
+    post: "Sales & Marketing Director",
   },
 ];
 
@@ -40,7 +40,7 @@ const style2 = {
 export default function TeamAbout() {
   return (
     <div className="mt-10 bg-line1 bg-cover bg-center  bg-no-repeat ">
-      <div>
+      <div style={style2}>
         <div className=" flex gap-4 ml-6 md:ml-20">
           <div className="flex mt-10 items-center justify-center ">
             <div
@@ -69,7 +69,7 @@ export default function TeamAbout() {
         </div>
         <h2
           className={cn(
-            "w-10/12 xs:text-xs md:text-sm mx-auto mt-6",
+            "w-10/12 xs:text-xs font-bold md:text-sm mx-auto mt-6",
             fontSans.className
           )}
         >
@@ -88,24 +88,23 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10 font-bold text-sm xs:text-xs xs:text-center md:text-left sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac
-            commodo sapien. Pellentesque porta lacus purus, id consectetur ex
-            sodales sit amet. Sed in urna diam. Curabitur mattis, sem ut semper
-            varius, dolor risus pretium ante, in bibendum leo libero nec magna.
-            Proin dignissim eu augue varius posuere. Donec ipsum massa, finibus
-            nec sem accumsan, finibus suscipit massa. Cras mollis consequat diam
-            nec blandit. Sed efficitur ornare sodales. Integer pellentesque
-            justo quis neque tincidunt, quis convallis turpis sagittis. Nunc ac
-            magna efficitur, cursus sem in, vestibulum sapien. Sed id venenatis
-            massa, rutrum dapibus nisi. Sed placerat nunc vel enim gravida,
-            vitae semper erat malesuada. Praesent convallis maximus convallis.
-            Aenean maximus egestas sapien ut tempus. Suspendisse imperdiet odio
-            non varius tempor. Suspendisse quis odio in libero sagittis
-            imperdiet non id leo.
+            Timi is a Multi-Certified Inbound Marketing & Sales Management
+            Specialist who has helped various founders, marketers, and sales
+            teams optimize their marketing, sales, and customer service
+            pipelines through digital marketing strategy, revenue operations
+            strategies, and CRM implementation.
+            <br /> <br /> He delights in helping aspirational Small and Medium
+            Enterprises (SMEs) transform the way they find, convert and keep
+            customers leveraging digital technologies. In 2020, he began his
+            digital marketing journey and has since scaled across the length and
+            breadth of the industry to arrive at a position where he now assists
+            businesses with revenue operations services on Salesforce,
+            GoHighLevel, Zoho, and HubSpot CRM platforms. Outside work, he picks
+            interest in leadership development and sports.
           </div>
         </div>{" "}
         <div className="w-full mt-6  flex items-center h-fit  justify-around xs:flex-col md:flex-row lg:flex-row">
@@ -114,24 +113,19 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10 font-bold  text-sm xs:text-xs sm:text-sm xs:text-center md:text-left  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac
-            commodo sapien. Pellentesque porta lacus purus, id consectetur ex
-            sodales sit amet. Sed in urna diam. Curabitur mattis, sem ut semper
-            varius, dolor risus pretium ante, in bibendum leo libero nec magna.
-            Proin dignissim eu augue varius posuere. Donec ipsum massa, finibus
-            nec sem accumsan, finibus suscipit massa. Cras mollis consequat diam
-            nec blandit. Sed efficitur ornare sodales. Integer pellentesque
-            justo quis neque tincidunt, quis convallis turpis sagittis. Nunc ac
-            magna efficitur, cursus sem in, vestibulum sapien. Sed id venenatis
-            massa, rutrum dapibus nisi. Sed placerat nunc vel enim gravida,
-            vitae semper erat malesuada. Praesent convallis maximus convallis.
-            Aenean maximus egestas sapien ut tempus. Suspendisse imperdiet odio
-            non varius tempor. Suspendisse quis odio in libero sagittis
-            imperdiet non id leo.
+            Fiyin is a Content Genius! FOr the past four years, he has dedicated
+            his life to writing copies specially engineered to make business
+            success a reality. He uses sorytelling with copywriting techniques
+            to drive sales, and he has enjoyed much success doing that by
+            helping several SMEs and big brands to write copies that has driven
+            intense rates of conversion. <br /> <br />
+            On the content and conversion side of things, he is the lead sales
+            and marketing strategist at Lifehouse Creatives. Outside work, he is
+            an avid reader and he is fascinated by the world of engineering.
           </div>
           <div className="w-3/12 xs:hidden md:flex xs:w-7/12 sm:w-6/12  md:w-4/12 lg:w-4/12 xl:w-3/12 img">
             <Image src={Hod.src} width={400} height={400} alt="helo" />
@@ -143,24 +137,23 @@ export default function TeamAbout() {
           </div>
           <div
             className={cn(
-              "w-6/12 mt-10  text-sm xs:text-xs sm:text-sm  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
+              "w-6/12 mt-10 font-bold  text-sm xs:text-xs sm:text-sm xs:text-center md:text-left  info md:text-xs lg:text-sm  xs:w-10/12 md:w-6/12 lg:w-6/12",
               fontSans.className
             )}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac
-            commodo sapien. Pellentesque porta lacus purus, id consectetur ex
-            sodales sit amet. Sed in urna diam. Curabitur mattis, sem ut semper
-            varius, dolor risus pretium ante, in bibendum leo libero nec magna.
-            Proin dignissim eu augue varius posuere. Donec ipsum massa, finibus
-            nec sem accumsan, finibus suscipit massa. Cras mollis consequat diam
-            nec blandit. Sed efficitur ornare sodales. Integer pellentesque
-            justo quis neque tincidunt, quis convallis turpis sagittis. Nunc ac
-            magna efficitur, cursus sem in, vestibulum sapien. Sed id venenatis
-            massa, rutrum dapibus nisi. Sed placerat nunc vel enim gravida,
-            vitae semper erat malesuada. Praesent convallis maximus convallis.
-            Aenean maximus egestas sapien ut tempus. Suspendisse imperdiet odio
-            non varius tempor. Suspendisse quis odio in libero sagittis
-            imperdiet non id leo.
+            Praise is a creative whose passion finds expression in words,
+            designs, space arrangements, brand imagery, and ideas. She leverages
+            her creativity to craft compelling content that engages various
+            audiences and uses her expertise in media to infuse her work with a
+            unique touch.
+            <br />
+            <br /> As a Creative Director, Praise is driven by a desire to
+            harness innovative ideas and craft lasting solutions using visual
+            design, creative and copywriting, and social media management.
+            Outside work, she is an avid reader who likes to explore the soul of
+            music. When she delves into the goodies of the internet she is
+            seeking to understand the human emotions or admiring the beauty of
+            nature.
           </div>
         </div>
       </div>

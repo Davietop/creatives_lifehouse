@@ -13,8 +13,8 @@ export default function BlogPosts() {
         Blogs
       </h1>
 
-      <div className="mt-6 flex items-center justify-center  gap-14 w-full  xs:flex-col lg:flex-row">
-        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12  xl:w-4/12 lg:w-3/12 xs:w-10/12 sm:w-10/12 ">
+      <div className="mt-6 flex items-center justify-center  gap-14  w-full basis-3/12 flex-wrap  xs:flex-col lg:flex-row">
+        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-3/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex gap-4 flex-col", poppins.className)}>
             <p className="font-bold text-sm">
@@ -24,27 +24,31 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-xl lg:text-base xl:text-lg  font-bold",
+                "xs:text-base lg:text-base xl:text-base  font-bold",
                 poppins.className
               )}
             >
               Your most unhappy customers are your greatest source of learning.
             </h1>
-            <p className="text-sm font-[500]">
+            <p className="text-xs font-[500]">
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts...
             </p>
 
             <div className="flex items-center gap-2">
-              <img src={blog.src} className="w-[40px] h-[40px] rounded-full" />
-              <div className="xs:text-xs sm:text-sm ">
+              <img
+                src={blog.src}
+                alt="blog"
+                className="w-[40px] h-[40px] rounded-full"
+              />
+              <div className="text-xs ">
                 <h5 className="font-bold">Oyatoye David</h5>
                 <p className="font-[400]">CEO and Founder</p>
               </div>
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12 xl:w-4/12 lg:w-3/12 xs:w-10/12 sm:w-10/12 ">
+        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-3/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex gap-4 flex-col", poppins.className)}>
             <p className="font-bold text-sm">
@@ -54,27 +58,31 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-xl lg:text-base xl:text-lg  font-bold",
+                "xs:text-base lg:text-base xl:text-base  font-bold",
                 poppins.className
               )}
             >
               Your most unhappy customers are your greatest source of learning.
             </h1>
-            <p className="text-sm font-[500]">
+            <p className="text-xs font-[500]">
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts...
             </p>
 
             <div className="flex items-center gap-2">
-              <img src={blog.src} className="w-[40px] h-[40px] rounded-full" />
-              <div className="xs:text-xs sm:text-sm ">
+              <img
+                src={blog.src}
+                alt="img"
+                className="w-[40px] h-[40px] rounded-full"
+              />
+              <div className="text-xs ">
                 <h5 className="font-bold">Oyatoye David</h5>
                 <p className="font-[400]">CEO and Founder</p>
               </div>
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12 xl:w-4/12 lg:w-3/12 xs:w-10/12 sm:w-10/12 ">
+        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-3/12  xs:w-10/12 sm:w-10/12 md:w-8/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex gap-4 flex-col", poppins.className)}>
             <p className="font-bold text-sm">
@@ -84,20 +92,58 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-xl lg:text-base xl:text-lg  font-bold",
+                "xs:text-base lg:text-base xl:text-base  font-bold",
                 poppins.className
               )}
             >
               Your most unhappy customers are your greatest source of learning.
             </h1>
-            <p className="text-sm font-[500]">
+            <p className="text-xs font-[500]">
               Far far away, behind the word mountains, far from the countries
               Vokalia and Consonantia, there live the blind texts...
             </p>
 
             <div className="flex items-center gap-2">
-              <img src={blog.src} className="w-[40px] h-[40px] rounded-full" />
-              <div className="xs:text-xs sm:text-sm ">
+              <img
+                src={blog.src}
+                alt="blog"
+                className="w-[40px] h-[40px] rounded-full"
+              />
+              <div className="text-xs ">
+                <h5 className="font-bold">Oyatoye David</h5>
+                <p className="font-[400]">CEO and Founder</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className=" flex flex-col items-center gap-6 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-3/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
+          <img className="" src={blog.src} alt="img" />
+          <div className={cn("flex gap-4 flex-col", poppins.className)}>
+            <p className="font-bold text-sm">
+              Business, Travel{" "}
+              <span className="text-xs font-[400]">- July 2, 2020</span>
+            </p>
+
+            <h1
+              className={cn(
+                "xs:text-base lg:text-base xl:text-base  font-bold",
+                poppins.className
+              )}
+            >
+              Your most unhappy customers are your greatest source of learning.
+            </h1>
+            <p className="text-xs font-[500]">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts...
+            </p>
+
+            <div className="flex items-center gap-2">
+              <img
+                src={blog.src}
+                alt="blog"
+                className="w-[40px] h-[40px] rounded-full"
+              />
+              <div className="text-xs ">
                 <h5 className="font-bold">Oyatoye David</h5>
                 <p className="font-[400]">CEO and Founder</p>
               </div>

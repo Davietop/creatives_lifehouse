@@ -24,27 +24,10 @@ import Modal from "./modal";
 
 import React, { useState, useEffect } from "react";
 
-export default function BlogNav() {
+export default function UploadNav() {
   return (
     <nav>
       <div className="xs:hidden pt-4 pb-4 sm:flex items-center justify-around ">
-        <div className="border-0 shadow bg-white  w-2/12  border p-2.5 rounded-full flex items-center  justify-center gap-3 sm:w-3/12  md:w-3/12 lg:w-[22%] ">
-          <Image src={search.src} width={13} height={13} alt="search" />
-
-          <input
-            style={{
-              borderBottomStyle: "none",
-            }}
-            type="text"
-            id="text"
-            className={cn(
-              "sm:text-sm xs:text-xs mt-[-0.1px] w-full outline-none ",
-              poppins.className
-            )}
-            placeholder="Search"
-          />
-        </div>
-
         <Image
           src={logo}
           className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
@@ -85,8 +68,6 @@ export default function BlogNav() {
             <Link href="/blog" aria-current="page">
               Blog & Resources
             </Link>
-
-            <Modal />
           </SheetContent>
         </Sheet>
       </div>
@@ -133,27 +114,8 @@ export default function BlogNav() {
               <Link href="/blog" aria-current="page">
                 Blog & Resources
               </Link>
-
-              <Modal />
             </SheetContent>
           </Sheet>
-        </div>
-
-        <div className="border-0 shadow mx-auto  w-11/12 border mt-2 p-3.5 rounded-full flex items-center  justify-center gap-3  ">
-          <Image src={search.src} width={13} height={13} alt="search" />
-
-          <input
-            style={{
-              borderBottomStyle: "none",
-            }}
-            type="text"
-            id="text"
-            className={cn(
-              "sm:text-sm xs:text-xs mt-[-0.1px] w-full outline-none ",
-              poppins.className
-            )}
-            placeholder="Search"
-          />
         </div>
       </div>
     </nav>

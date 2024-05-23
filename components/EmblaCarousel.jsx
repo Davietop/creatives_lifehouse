@@ -13,8 +13,6 @@ import { poppins } from "@/fonts";
 import Image from "next/image";
 import blog from "../public/blog.jpg";
 
-console.log(blog.src);
-
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
@@ -41,7 +39,7 @@ const EmblaCarousel = (props) => {
   }, [emblaApi]);
 
   return (
-    <section className="embla   theme-dark  max-h-max xs:w-full sm:w-11/12 md:w-10/12 lg:w-10/12  mt-4 mx-auto ">
+    <section className="embla   theme-dark  max-h-max xs:w-full sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto ">
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>
         <div className="embla__container  touch-pan-y flex ml-[calc(var(--slide-spacing) * -1)]">
           {slides.map((index) => (
@@ -52,22 +50,27 @@ const EmblaCarousel = (props) => {
                   src={blog.src}
                   alt="img"
                 />
-                <div className={cn("flex gap-6 flex-col", poppins.className)}>
-                  <p className="font-bold">
+                <div
+                  className={cn(
+                    "flex gap-4 lg:gap-6 flex-col",
+                    poppins.className
+                  )}
+                >
+                  <p className="font-bold text-sm">
                     Business, Travel{" "}
-                    <span className="font-[400]">- July 2, 2020</span>
+                    <span className="font-[400] text-xs">- July 2, 2020</span>
                   </p>
 
                   <h1
                     className={cn(
-                      "xs:text-xl sm:text-2xl md:text-3xl font-bold",
+                      "xs:text-lg sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl font-bold",
                       poppins.className
                     )}
                   >
                     Your most unhappy customers are your greatest source of
                     learning.
                   </h1>
-                  <p className="text-sm font-[500]">
+                  <p className="xs:text-xs md:text-sm lg:text-sm font-[500]">
                     Far far away, behind the word mountains, far from the
                     countries Vokalia and Consonantia, there live the blind
                     texts. Separated they live in Bookmarksgrove right at the
@@ -78,8 +81,9 @@ const EmblaCarousel = (props) => {
                     <img
                       src={blog.src}
                       className="w-[40px] h-[40px] rounded-full"
+                      alt="blog"
                     />
-                    <div className="xs:text-xs sm:text-sm ">
+                    <div className="xs:text-xs sm:text-xs md:text-sm ">
                       <h5 className="font-bold">Oyatoye David</h5>
                       <p className="font-[400]">CEO and Founder</p>
                     </div>
