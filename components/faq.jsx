@@ -215,6 +215,7 @@ export default function Faq() {
               width={64}
               height={64}
               alt="pricing"
+              id="pricing"
             />
             <Image
               className="xs:flex md:hidden"
@@ -222,6 +223,7 @@ export default function Faq() {
               width={32}
               height={32}
               alt="pricing"
+              id="pricing"
             />
             <p id="pricing" className="xs:text-xs md:text-sm font-bold ">
               Pricing
