@@ -57,27 +57,27 @@ export default function Information() {
             position: "relative",
             "z-index": "100px",
           }}
-          className=" w-fit xs:text-xs sm:text-xs  md:text-sm "
+          className="w-full  xs:text-xs sm:text-xs  md:text-sm "
         >
-          <p className="text-center w-full">
+          <p className="text-center">
             By leveraging the most effective digital technologies, we ensure
             your ongoing investment generates remarkable ROI.
           </p>
           <div
             className={cn(
-              "flex xs:text-xs sm:text-xs md:text-xs justify-center items-center mt-4 sm:flex-row",
+              " flex justify-around w-full mx-auto xs:text-xs sm:text-xs md:text-xs  mt-4 sm:flex-row",
               open_Sans.className
             )}
           >
-            <ol className=" relative right-[8px]">
+            <ol className="w-7/12 relative right-[10px] ">
               <li>CRM Setup & Management</li>
               <li>Email Marketing</li>
               <li> Sales and Marketing Strategy</li>
               <li> Marketing Automation</li>
             </ol>
-            <ol className="relative left-[15px]">
+            <ol className="relative left-[10px] w-6/12 ">
               <li>Sales Funnel Development</li>
-              <li>Website & Landing Page Design</li>
+              <li>Website Devlopement</li>
               <li>SEO & Content Marketing</li>
               <li>Social Media Marketing</li>
             </ol>
