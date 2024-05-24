@@ -65,17 +65,17 @@ export default function Information() {
           </p>
           <div
             className={cn(
-              "flex xs:text-xs sm:text-xs md:text-xs justify-around items-center mt-4  sm:flex-row",
+              "flex xs:text-xs sm:text-xs md:text-xs justify-center items-center mt-4 sm:flex-row",
               open_Sans.className
             )}
           >
-            <ol className="">
+            <ol className=" relative right-[8px]">
               <li>CRM Setup & Management</li>
               <li>Email Marketing</li>
               <li> Sales and Marketing Strategy</li>
               <li> Marketing Automation</li>
             </ol>
-            <ol>
+            <ol className="relative left-[15px]">
               <li>Sales Funnel Development</li>
               <li>Website & Landing Page Design</li>
               <li>SEO & Content Marketing</li>

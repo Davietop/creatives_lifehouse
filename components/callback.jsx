@@ -30,6 +30,7 @@ const initData = {
 const initState = { values: initData };
 export default function Message() {
   const [state, setState] = useState(initState);
+  const [loading, setLoading] = useState(true);
 
   const handleChange = (e) => {
     return setState((prev) => ({
@@ -42,12 +43,14 @@ export default function Message() {
   };
 
   const submit = async function (e) {
-    // console.log("clicked", state);
-
     e.preventDefault();
     try {
-      await sendContactForm(state.values);
+      const data = await sendContactForm(state.values);
+      if (data) {
+        setLoading(!loading);
+      }
     } catch (error) {
+      setLoading(false);
       alert("Message Not Sent");
     }
   };
@@ -166,7 +169,11 @@ export default function Message() {
             ></textarea>
           </div>
 
-          <Button className="bg-[#121b1b] text-white w-6/12  " onClick={submit}>
+          <Button
+            isLoading={loading}
+            className="bg-[#121b1b] text-white w-6/12"
+            onClick={submit}
+          >
             Submit
           </Button>
         </form>

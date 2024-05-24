@@ -176,7 +176,7 @@ export default function Faq() {
               alt="general_img"
               id="general"
             />
-            <p id="pricing" className="xs:text-xs md:text-sm font-bold ">
+            <p id="general" className="xs:text-xs md:text-sm font-bold ">
               General
             </p>
           </div>
@@ -201,7 +201,7 @@ export default function Faq() {
               id="service"
             />
 
-            <p id="pricing" className="xs:text-xs md:text-sm font-bold ">
+            <p id="service" className="xs:text-xs md:text-sm font-bold ">
               Services
             </p>
           </div>

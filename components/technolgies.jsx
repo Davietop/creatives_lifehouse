@@ -42,7 +42,7 @@ export default function Slide() {
   useEffect(() => {
     const splide = new Splide(".splide", {
       type: "loop",
-      perPage: 4,
+      perPage: 3,
       arrows: false,
       pagination: false,
       focus: "center",
@@ -70,7 +70,7 @@ export default function Slide() {
                     <div className="splide__slide__container w-[500px]">
                       <img
                         src={data}
-                        className=" xs:w-7/12 sm:w-5/12 md:w-4/12"
+                        className=" xs:w-[300px] sm:w-[300px] md:w-4/12"
                         alt="hello"
                       />
                     </div>
