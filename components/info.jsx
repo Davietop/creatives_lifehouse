@@ -38,52 +38,6 @@ export default function Information() {
         fontSans.className
       )}
     >
-      <Card
-        style={style}
-        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat xs:w-11/12 sm:w-10/12  md:w-7/12 lg:w-5/12 xl:w-4/12  rounded-xl shadow  "
-      >
-        <div className="circle2 "></div>
-        <CardHeader>
-          <div className="flex md:text-base xs:text-sm items-center justify-center flex-col gap-6 xl:gap-2">
-            <CardTitle className="text-center font-bold">What we do?</CardTitle>
-            <CardDescription>
-              <Image src={Service.src} alt="image" width={200} height={200} />
-            </CardDescription>
-          </div>
-          <CardDescription className="xs:text-xs md:text-sm font-bold text-center"></CardDescription>
-        </CardHeader>
-        <CardContent
-          style={{
-            position: "relative",
-            "z-index": "100px",
-          }}
-          className="w-full  xs:text-xs sm:text-xs  md:text-sm "
-        >
-          <p className="text-center">
-            By leveraging the most effective digital technologies, we ensure
-            your ongoing investment generates remarkable ROI.
-          </p>
-          <div
-            className={cn(
-              " flex justify-around w-full mx-auto xs:text-xs sm:text-xs md:text-xs  mt-4 sm:flex-row",
-              open_Sans.className
-            )}
-          >
-            <ol className="w-7/12 relative right-[10px] ">
-              <li>CRM Setup & Management</li>
-              <li>Email Marketing</li>
-              <li> Sales and Marketing Strategy</li>
-              <li> Marketing Automation</li>
-            </ol>
-            <ol className="relative left-[10px] w-6/12 ">
-              <li>Sales Funnel Development</li>
-              <li>Website Devlopement</li>
-              <li>SEO & Content Marketing</li>
-              <li>Social Media Marketing</li>
-            </ol>
-          </div>
-        </CardContent>
-      </Card>
       {card.map((data, i) => {
         return (
           <Card
@@ -117,6 +71,59 @@ export default function Information() {
           </Card>
         );
       })}
+      <Card
+        style={style}
+        className="container2 border-2  shadow   bg-cover bg-center bg-no-repeat xs:w-11/12 sm:w-10/12  md:w-7/12 lg:w-5/12 xl:w-4/12  rounded-xl shadow  "
+      >
+        <div className="circle2 "></div>
+        <CardHeader>
+          <div className="flex md:text-base xs:text-sm items-center justify-center flex-col gap-4 xl:gap-2">
+            <CardTitle className="text-center font-bold">What we do?</CardTitle>
+            <CardDescription>
+              <Image src={Service.src} alt="image" width={200} height={200} />
+            </CardDescription>
+          </div>
+          <CardDescription className="xs:text-xs md:text-sm font-bold text-center"></CardDescription>
+        </CardHeader>
+        <CardContent
+          style={{
+            position: "relative",
+            "z-index": "100px",
+          }}
+          className="w-full text-center  xs:text-xs sm:text-xs  md:text-sm "
+        >
+          By leveraging the most effective digital technologies, we ensure your
+          ongoing investment generates remarkable ROI.
+          <div className="text-left list mt-6">
+            <ul>
+              <li>
+                <span>CRM Setup & Management</span>
+              </li>
+              <li>
+                <span>Email Marketing</span>
+              </li>
+              <li>
+                <span>Sales and Marketing Strategy</span>
+              </li>
+              <li>
+                <span>Marketing Automation</span>
+              </li>
+              <li>
+                <span>Sales Funnel Development</span>
+              </li>
+              <li>
+                <span>Website & Landing Page Design</span>
+              </li>
+              <li>
+                <span>SEO & Content Marketing</span>
+              </li>
+              <li>
+                <span>Social Media Marketing</span>
+              </li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }
