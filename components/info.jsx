@@ -92,35 +92,40 @@ export default function Information() {
           }}
           className=" text-center  xs:text-xs sm:text-xs  md:text-sm "
         >
-          By leveraging the most effective digital technologies, we ensure your
-          ongoing investment generates remarkable ROI.
-          <div className="text-left list mt-6">
-            <ul>
-              <li>
-                <span>CRM Setup & Management</span>
-              </li>
-              <li>
-                <span>Email Marketing</span>
-              </li>
-              <li>
-                <span>Sales and Marketing Strategy</span>
-              </li>
-              <li>
-                <span>Marketing Automation</span>
-              </li>
-              <li>
-                <span>Sales Funnel Development</span>
-              </li>
-              <li>
-                <span>Website & Landing Page Design</span>
-              </li>
-              <li>
-                <span>SEO & Content Marketing</span>
-              </li>
-              <li>
-                <span>Social Media Marketing</span>
-              </li>
-            </ul>
+          <div className="flex flex-col">
+            <p>
+              {" "}
+              By leveraging the most effective digital technologies, we ensure
+              your ongoing investment generates remarkable ROI.
+            </p>
+            <div className="text-left list mt-6">
+              <ul>
+                <li>
+                  <span>CRM Setup & Management</span>
+                </li>
+                <li>
+                  <span>Email Marketing</span>
+                </li>
+                <li>
+                  <span>Sales and Marketing Strategy</span>
+                </li>
+                <li>
+                  <span>Marketing Automation</span>
+                </li>
+                <li>
+                  <span>Sales Funnel Development</span>
+                </li>
+                <li>
+                  <span>Website & Landing Page Design</span>
+                </li>
+                <li>
+                  <span>SEO & Content Marketing</span>
+                </li>
+                <li>
+                  <span>Social Media Marketing</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </CardContent>
       </Card>
