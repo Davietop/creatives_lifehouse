@@ -90,7 +90,7 @@ export default function Information() {
             position: "relative",
             "z-index": "100px",
           }}
-          className="w-full text-center  xs:text-xs sm:text-xs  md:text-sm "
+          className=" text-center  xs:text-xs sm:text-xs  md:text-sm "
         >
           By leveraging the most effective digital technologies, we ensure your
           ongoing investment generates remarkable ROI.
