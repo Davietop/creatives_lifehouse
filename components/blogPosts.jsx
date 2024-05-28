@@ -13,8 +13,8 @@ export default function BlogPosts() {
         Blogs
       </h1>
 
-      <div className="mt-6 flex items-center justify-center  gap-14  w-full basis-3/12 flex-wrap  xs:flex-col lg:flex-row">
-        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
+      <div className="mt-6 flex items-center justify-center  gap-14  w-full basis-3/12 flex-wrap  xs:flex-col md:flex-row">
+        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-5/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex xs:gap-2  flex-col", fontSans.className)}>
             <p className="font-bold text-xs">
@@ -48,7 +48,7 @@ export default function BlogPosts() {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
+        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-5/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex xs:gap-2  flex-col", fontSans.className)}>
             <p className="font-bold text-xs">
@@ -82,7 +82,7 @@ export default function BlogPosts() {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
+        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-5/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex xs:gap-2  flex-col", fontSans.className)}>
             <p className="font-bold text-xs">
@@ -116,7 +116,7 @@ export default function BlogPosts() {
             </div>
           </div>
         </div>
-        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-8/12 ">
+        <div className=" flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-5/12 ">
           <img className="" src={blog.src} alt="img" />
           <div className={cn("flex xs:gap-2  flex-col", fontSans.className)}>
             <p className="font-bold text-xs">
