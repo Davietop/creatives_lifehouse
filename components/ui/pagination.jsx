@@ -28,7 +28,7 @@ const PaginationContent = React.forwardRef(({ className, ...props }, ref) => (
 PaginationContent.displayName = "PaginationContent";
 
 const PaginationItem = React.forwardRef(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("relative right-[20px]", className)} {...props} />
+  <li ref={ref} className={cn("relative right-[27px]", className)} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
 
@@ -51,7 +51,7 @@ const PaginationPrevious = ({ className, ...props }) => (
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 ", className)}
+    className={cn("gap-1 relative left-[12px]", className)}
     {...props}
   >
     <ChevronLeftIcon className="h-4 w-4" />
@@ -64,7 +64,7 @@ const PaginationNext = ({ className, ...props }) => (
   <PaginationLink
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 absolute right-[-45px] bottom-[-15px] ", className)}
+    className={cn("gap-1 absolute right-[-40px] bottom-[-15px] ", className)}
     {...props}
   >
     {/* <span>Next</span> */}
