@@ -24,7 +24,7 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-base lg:text-base xl:text-base  font-bold",
+                "xs:text-sm lg:text-base   font-bold",
                 poppins.className
               )}
             >
@@ -58,7 +58,7 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-base lg:text-base xl:text-base  font-bold",
+                "xs:text-sm lg:text-base   font-bold",
                 poppins.className
               )}
             >
@@ -92,7 +92,7 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-base lg:text-base xl:text-base  font-bold",
+                "xs:text-sm lg:text-base xl:text-base  font-bold",
                 poppins.className
               )}
             >
@@ -126,7 +126,7 @@ export default function BlogPosts() {
 
             <h1
               className={cn(
-                "xs:text-base lg:text-base xl:text-base  font-bold",
+                "xs:text-sm lg:text-base xl:text-base  font-bold",
                 poppins.className
               )}
             >

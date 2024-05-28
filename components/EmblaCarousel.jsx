@@ -41,7 +41,7 @@ const EmblaCarousel = (props) => {
   return (
     <section
       className={cn(
-        "embla   theme-dark  max-h-max xs:w-11/12 sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto ",
+        "embla   theme-dark  max-h-max xs:w-full sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto ",
         poppins.className
       )}
     >
