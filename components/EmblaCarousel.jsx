@@ -9,7 +9,7 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import { useState, useCallback, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { poppins } from "@/fonts";
+import { fontSans, poppins } from "@/fonts";
 import Image from "next/image";
 import blog from "../public/blog.jpg";
 
@@ -39,31 +39,31 @@ const EmblaCarousel = (props) => {
   }, [emblaApi]);
 
   return (
-    <section className="embla   theme-dark  max-h-max xs:w-full sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto ">
+    <section
+      className={cn(
+        "embla   theme-dark  max-h-max xs:w-11/12 sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto ",
+        poppins.className
+      )}
+    >
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>
         <div className="embla__container  touch-pan-y flex ml-[calc(var(--slide-spacing) * -1)]">
           {slides.map((index) => (
             <div className="embla__slide " key={index}>
               <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center gap-10 xs:flex-col lg:flex-row m-[20px]">
                 <img
-                  className="lg:w-5/12 xs:w-full  h-[450px]"
+                  className="lg:w-5/12 xs:w-full  h-[400px]"
                   src={blog.src}
                   alt="img"
                 />
-                <div
-                  className={cn(
-                    "flex gap-4 lg:gap-6 flex-col",
-                    poppins.className
-                  )}
-                >
-                  <p className="font-bold text-sm">
+                <div className={cn("flex xs:gap-2 sm:gap-4 flex-col")}>
+                  <p className="font-bold xs:text-xs  sm:text-sm">
                     Business, Travel{" "}
                     <span className="font-[400] text-xs">- July 2, 2020</span>
                   </p>
 
                   <h1
                     className={cn(
-                      "xs:text-lg sm:text-2xl md:text-2xl lg:text-2xl xl:text-3xl font-bold",
+                      "xs:text-sm sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-bold",
                       poppins.className
                     )}
                   >
@@ -77,15 +77,20 @@ const EmblaCarousel = (props) => {
                     coast of the Semantics, a large language ocean.
                   </p>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 mt-4">
                     <img
                       src={blog.src}
                       className="w-[40px] h-[40px] rounded-full"
                       alt="blog"
                     />
-                    <div className="xs:text-xs sm:text-xs md:text-sm ">
-                      <h5 className="font-bold">Oyatoye David</h5>
-                      <p className="font-[400]">CEO and Founder</p>
+                    <div
+                      className={cn(
+                        " flex flex-col gap-1 ",
+                        fontSans.className
+                      )}
+                    >
+                      <h5 className="text-xs font-bold">Oyatoye David</h5>
+                      <p className="text-xs font-[400]">CEO and Founder</p>
                     </div>
                   </div>
                 </div>
