@@ -41,21 +41,20 @@ const EmblaCarousel = (props) => {
   return (
     <section
       className={cn(
-        "embla   theme-dark  max-h-max xs:w-full sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto ",
-        poppins.className
+        "embla   theme-dark  max-h-max xs:w-full sm:w-10/12 md:w-10/12 lg:w-11/12 xl:w-10/12  mt-4 mx-auto "
       )}
     >
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>
         <div className="embla__container  touch-pan-y flex ml-[calc(var(--slide-spacing) * -1)]">
           {slides.map((index) => (
             <div className="embla__slide " key={index}>
-              <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center gap-10 xs:flex-col lg:flex-row m-[20px]">
+              <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center xs:gap-6 lg:gap-10 xs:flex-col lg:flex-row m-[20px]">
                 <img
                   className="lg:w-5/12 xs:w-full  h-[400px]"
                   src={blog.src}
                   alt="img"
                 />
-                <div className={cn("flex xs:gap-2 sm:gap-4 flex-col")}>
+                <div className={cn("flex xs:gap-2 sm:gap-2 lg:gap-4 flex-col")}>
                   <p className="font-bold xs:text-xs  sm:text-sm">
                     Business, Travel{" "}
                     <span className="font-[400] text-xs">- July 2, 2020</span>

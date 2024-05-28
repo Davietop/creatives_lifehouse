@@ -15,7 +15,7 @@ export default function BlogPage() {
 
       <BlogPosts />
       {/* <PaginationDemo /> */}
-      <Pag />
+      {/* <Pag /> */}
       <Footer />
     </div>
   );
