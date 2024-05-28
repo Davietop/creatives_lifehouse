@@ -44,7 +44,7 @@ const Pagination2 = (props) => {
   return (
     <div className="">
       <Pagination
-        className={cn("pagination-container mb-20 ", {
+        className={cn("pagination-container mb-20  ", {
           [className]: className,
         })}
       >
