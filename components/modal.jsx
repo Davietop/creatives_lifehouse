@@ -14,10 +14,9 @@ import {
 
 import React, { useState, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
-import { data } from "autoprefixer";
+
 import { InputOTPForm } from "./schema";
 import { cn } from "@/lib/utils";
-import { poppins } from "@/fonts";
 
 const supabase = createClient(
   "https://dveiadlmhbhaqxbckdgz.supabase.co",

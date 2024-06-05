@@ -21,7 +21,7 @@ export default function Pag() {
     return data.slice(firstPageIndex, lastPageIndex);
   }, [currentPage]);
 
-  console.log(currentTableData);
+  // console.log(currentTableData);
 
   return (
     <>

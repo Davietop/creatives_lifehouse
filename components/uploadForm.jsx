@@ -1,94 +1,307 @@
 "use client";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@nextui-org/button";
-import { poppins } from "@/fonts";
-import { cn } from "@/lib/utils";
-import plus_32 from "../public/add_32.png";
-import plus_64 from "../public/add_64.png";
-import Image from "next/image";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Button } from "./ui/button";
+import { Button as Button2 } from "@nextui-org/button";
+import { Separator } from "@/components/ui/separator";
+import { createClient } from "@supabase/supabase-js";
+import { useToast } from "./ui/use-toast";
+import { useRouter } from "next/navigation";
+import { user } from "@nextui-org/react";
 
-const state = {
-  blogTitle: "",
-  blogImage: "",
-  blogIntro: "",
-};
+import { v4 as uuidv4 } from "uuid";
+
+//
+
+const supabase = createClient(
+  "https://dveiadlmhbhaqxbckdgz.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2ZWlhZGxtaGJoYXF4YmNrZGd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzU2NzAsImV4cCI6MjAzMDc1MTY3MH0.SxSW5XEb3KQbYHGyt4Yj3SjvfC0LGiVV2BfvcUkvJ2A"
+);
+
+const id = uuidv4();
 
 export default function UploadForm() {
-  const { register, handleSubmit } = useForm();
-  const [blogState, setBlogState] = useState(state);
+  const [metadata, setMetadata] = useState({
+    title: "",
+    author: "",
+    publishDate: "",
+    img: "",
+    summary: "",
+    category: "",
+  });
 
-  // console.log(blogState);
+  const [contentSections, setContentSections] = useState([
+    {
+      sectionTitle: "",
+      content: "",
+      mediaImage: "",
+      mediaURL: "",
+      id: id,
+    },
+  ]);
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const [loading, setLoading] = useState(false);
+
+  const { toast } = useToast();
+
+  const router = useRouter();
+
+  const handleMetadataChange = (e) => {
+    setMetadata({
+      ...metadata,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleImgChange = (e) => {
+    setMetadata({
+      ...metadata,
+      img: e.target.value,
+    });
+  };
+
+  const handleContentChange = (index, e) => {
+    const newContentSections = [...contentSections];
+    newContentSections[index][e.target.name] = e.target.value;
+    setContentSections(newContentSections);
+  };
+
+  const addContentSection = () => {
+    setContentSections([
+      ...contentSections,
+      {
+        sectionTitle: "",
+        content: "",
+        mediaImage: "",
+        mediaURL: "",
+        id: uuidv4(),
+      },
+    ]);
+  };
+
+  const uploadContentImages = async function (userId, imagePath, name) {
+    const { data, error } = await supabase.storage
+      .from("contentimage")
+      .upload(`public/${userId}/${name}`, imagePath);
+
+    console.log(error);
+  };
+
+  const uploadMetaImage = async (userId, imagePath, name) => {
+    const { data, error } = await supabase.storage
+      .from("blogimage")
+      .upload(`public/${userId}/${name}`, imagePath);
+  };
+
+  const handleSubmit = async (e) => {
+    setLoading(true);
+    const metaImage = document.querySelector("#metaimage");
+    const contentImages = document.querySelectorAll("#mediaImage");
+
+    e.preventDefault();
+    const blogPost = {
+      metadata,
+      contentSections,
+    };
+
+    try {
+      const { data, error } = await supabase
+        .from("blogpost")
+        .insert([{ metadata, contentSections }])
+        .select();
+
+      if (data) {
+        contentImages.forEach((contentImg, index) => {
+          const contentSection = blogPost?.contentSections[index];
+
+          const file = contentImg.files[0] ? contentImg.files[0] : "";
+          const name = contentImg.files[0] ? contentImg.files[0].name : "";
+
+          uploadMetaImage(
+            data[0].id,
+            metaImage.files[0],
+            metaImage.files[0].name
+          );
+          uploadContentImages(contentSection.id, file, name);
+        });
+
+        toast({
+          description: "Upload Successful, redirecting to blog page...",
+        });
+        setTimeout(() => router.push("/blog"), 2000);
+        setLoading(false);
+      }
+
+      if (error) {
+        setLoading(false);
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "Try again later",
+        });
+      }
+    } catch (error) {
+      return error;
+    }
   };
 
   return (
-    <form
-      className="relative flex flex-col items-center justify-center mx-auto gap-6 mb-10 mt-6 xs:w-10/12 md:w-6/12"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <h1 className={cn("mt-4 font-bold", poppins.className)}>
-        Blog Header Information
-      </h1>
-      <Input
-        placeholder="Blog Title"
-        label="blogTitle"
-        register={register}
-        required
-      />
-      <Input
-        placeholder="Blog Introduction"
-        label="blogIntroduction"
-        register={register}
-        required
-      />
-      <Input
-        placeholder="Blog Image"
-        label="blogImage"
-        type="file"
-        register={register}
-      />
+    <div className="App flex flex-col   mx-auto  mb-10 mt-6 xs:w-10/12 md:w-6/12">
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col gap-6">
+          <h3 className="text-center mt-6 font-bold ">Blog Post Metadata</h3>
+          {/* <label>Title:</label> */}
+          <Input
+            placeholder="Enter the Blog Post Title"
+            type="text"
+            name="title"
+            value={metadata.title}
+            onChange={handleMetadataChange}
+            required
+          />
 
-      <h1 className={cn("mt-4 font-bold", poppins.className)}>
-        Blog Post Information
-      </h1>
-      <Input placeholder="Post Header" label="postHeader" register={register} />
+          <Input
+            placeholder="Enter the Blog Post Author"
+            type="text"
+            name="author"
+            value={metadata.author}
+            onChange={handleMetadataChange}
+            required
+          />
 
-      <Input
-        placeholder="Post Title"
-        label="postTitle"
-        register={register}
-        required
-      />
+          <Input
+            type="date"
+            placeholder="Publish Date"
+            name="publishDate"
+            value={metadata.publishDate}
+            onChange={handleMetadataChange}
+            required
+          />
 
-      <Input
-        placeholder="Post Image"
-        label="postImage"
-        type="file"
-        register={register}
-      />
+          <Input
+            placeholder="Enter the category this blog fall into"
+            type="text"
+            name="category"
+            value={metadata.category}
+            onChange={handleMetadataChange}
+            required
+          />
 
-      <div className="grid w-full gap-1.5">
-        <Label htmlFor="message-2">Post Text</Label>
-        <Textarea
-          register={register}
-          placeholder="Post Text"
-          label="postText"
-          id="message-2"
-          required
-        />
-      </div>
+          <Input
+            placeholder="Select an image that fits this blogpost"
+            type="file"
+            name="image"
+            value={metadata.img}
+            onChange={handleImgChange}
+            accept="image/png, image/jpeg, image/gif"
+            id="metaimage"
+            required
+          />
 
-      <img className="absolute bottom-4 right-0 " src={plus_32.src}></img>
+          <Textarea
+            placeholder="Enter the summary of this blog "
+            name="summary"
+            value={metadata.summary}
+            onChange={handleMetadataChange}
+            required
+          />
+        </div>
 
-      <Button type="submit" className=" w-10/12 xs:p-6  md:p-8  ">
-        Submit
-      </Button>
-    </form>
+        <div className="flex flex-col gap-6">
+          <h3 className="text-center font-bold mt-6">Blog Post Content</h3>
+          {contentSections.map((section, index) => (
+            <div key={index} className="contentSection flex flex-col gap-6">
+              <Input
+                type="text"
+                name="sectionTitle"
+                placeholder="Section Title"
+                value={section.sectionTitle}
+                onChange={(e) => handleContentChange(index, e)}
+              />
+
+              <Textarea
+                name="content"
+                placeholder="Enter content"
+                value={section.content}
+                onChange={(e) => handleContentChange(index, e)}
+                required
+              />
+
+              <Input
+                type="file"
+                // data-tab={}
+                name="mediaImage"
+                placeholder="If you have images for this section, please include"
+                value={section.mediaImage}
+                onChange={(e) => handleContentChange(index, e)}
+                accept="image/png, image/jpeg, image/gif"
+                id="mediaImage"
+              />
+
+              <Input
+                placeholder="If you have any external link for this section include them here"
+                type="url"
+                name="mediaURL"
+                value={section.mediaURL}
+                onChange={(e) => handleContentChange(index, e)}
+              />
+
+              <Separator className="my-4" />
+            </div>
+          ))}
+          <Button
+            className="flex self-end"
+            type="button"
+            onClick={addContentSection}
+          >
+            Add Another Section
+          </Button>
+        </div>
+
+        <Button2 type="submit" value="Upload Blog Post">
+          Upload Blog
+        </Button2>
+      </form>
+    </div>
   );
 }
+
+// const uploadImage = async (userId) => {
+//   const imagePath = document.getElementById("metaimage").files[0];
+
+//   if (imagePath) {
+//     const { data, error } = await supabase.storage
+//       .from("blogimage")
+//       .upload(`public/${userId}`, imagePath);
+//   }
+// };
+
+// const uploadContentsImage = (userId) => {};
+
+// async function uploadContentImages() {
+//   const getFilePath = document.querySelectorAll("#mediaImage");
+
+//   for (const file of getFilePath) {
+//     console.log(file);
+//   }
+// }
+
+// const getContentData = async function () {
+//   const { data, error } = await supabase
+//     .from("blogpost")
+//     .select("contentSections");
+
+//   return data;
+// };
+
+// getContentData();
+
+// (await contentInfo).map((data) => {
+//   data.contentSections.map((section) => {
+//     console.log(section.id);
+
+//   });
+// });
+
+// uploadImage(data[0].id);

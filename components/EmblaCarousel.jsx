@@ -7,19 +7,44 @@ import {
   usePrevNextButtons,
 } from "./EmblaCarouselArrowButton";
 import useEmblaCarousel from "embla-carousel-react";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { fontSans, poppins } from "@/fonts";
 import Image from "next/image";
 import blog from "../public/blog.jpg";
+import Founder from "../public/timi2.png";
+
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  "https://dveiadlmhbhaqxbckdgz.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2ZWlhZGxtaGJoYXF4YmNrZGd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzU2NzAsImV4cCI6MjAzMDc1MTY3MH0.SxSW5XEb3KQbYHGyt4Yj3SjvfC0LGiVV2BfvcUkvJ2A"
+);
+
+const dataBlog = {
+  blogPosts: [],
+};
+const metaBlog = {
+  metaInfo: [],
+  imgId: [],
+};
+const urlPath = [];
+
+const createObj = {
+  name: "",
+  uid: "",
+};
 
 const EmblaCarousel = (props) => {
-  const { slides, options } = props;
+  const { options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: true, delay: 5000 }),
   ]);
 
   const [isPlaying, setIsPlaying] = useState(false);
+  const [blogData, setBlogData] = useState(dataBlog);
+  const [metaData, setMetaData] = useState(metaBlog);
+  const [create, setCreate] = useState(createObj);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
@@ -31,12 +56,83 @@ const EmblaCarousel = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  useEffect(() => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
-    if (!autoplay) return;
+  let fill = [];
+  let fillId = [];
 
-    setIsPlaying(autoplay.isPlaying());
-  }, [emblaApi]);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      async function getData() {
+        const { data, error } = await supabase.from("blogpost").select();
+        setBlogData({
+          ...dataBlog,
+          blogPosts: data,
+        });
+
+        return data;
+      }
+
+      async function getMetaDataImg(id) {
+        const { data, error } = await supabase.storage
+          .from("blogimage")
+          .list(`public/${id}`);
+
+        const urls = data.map((file, index, arrayImage) => {
+          const fullPath = `public/${id}/${file.name}`;
+          const { data } = supabase.storage
+            .from("blogimage")
+            .getPublicUrl(fullPath);
+          fill.push(data);
+
+          fillId.push(...arrayImage);
+
+          setMetaData({
+            ...metaData,
+            metaInfo: fill,
+            imgId: fillId,
+          });
+        });
+      }
+
+      getData().then((data) => {
+        data.map((data2, index) => {
+          getMetaDataImg(data2.id);
+        });
+      });
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [dataBlog.blogPosts, metaBlog.metaInfo, createObj.name]);
+
+  function truncateStringAtWordBoundary(str, maxLength, text) {
+    if (str.length <= maxLength) {
+      return str;
+    }
+
+    const trimmedStr = str.slice(0, maxLength);
+    const lastSpaceIndex = trimmedStr.lastIndexOf(text);
+
+    if (lastSpaceIndex === -1) {
+      return trimmedStr + "...";
+    }
+
+    return trimmedStr.slice(0, lastSpaceIndex) + "...";
+  }
+
+  const maxLength = 306;
+
+  async function load(data2) {
+    const { data, error } = await supabase.storage
+      .from("blogimage")
+      .list(`public/${data2.id}`, {
+        limit: 100,
+        offset: 0,
+        sortBy: { column: "name", order: "asc" },
+      });
+
+    console.log(data);
+  }
 
   return (
     <section
@@ -46,56 +142,72 @@ const EmblaCarousel = (props) => {
     >
       <div className="embla__viewport overflow-hidden" ref={emblaRef}>
         <div className="embla__container  touch-pan-y flex ml-[calc(var(--slide-spacing) * -1)]">
-          {slides.map((index) => (
-            <div className="embla__slide " key={index}>
-              <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center xs:gap-6 lg:gap-10 xs:flex-col lg:flex-row m-[20px]">
-                <img
-                  className="lg:w-5/12 xs:w-full  h-[400px]"
-                  src={blog.src}
-                  alt="img"
-                />
-                <div className={cn("flex xs:gap-2 sm:gap-2 lg:gap-4 flex-col")}>
-                  <p className="font-bold xs:text-xs  sm:text-sm">
-                    Business, Travel{" "}
-                    <span className="font-[400] text-xs">- July 2, 2020</span>
-                  </p>
+          {blogData.blogPosts.map((data2, index, arrayData) => {
+            const str = data2.metadata.img.split("\\")[2];
 
-                  <h1
-                    className={cn(
-                      "xs:text-sm sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-bold",
-                      poppins.className
-                    )}
+            const { data } = supabase.storage
+              .from("blogimage")
+              .getPublicUrl(`public/${data2.id}/${str}`);
+
+            if (!data) return;
+            const date = new Date(data2.metadata.publishDate).toDateString();
+            const truncatedStr = truncateStringAtWordBoundary(
+              data2.metadata.summary,
+              maxLength,
+              "more"
+            );
+
+            return (
+              <div data-tab={data2.id} className="embla__slide " key={index}>
+                <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center xs:gap-6 lg:gap-10 xs:flex-col lg:flex-row m-[20px]">
+                  <img
+                    className="lg:w-5/12 xs:w-full rounded-lg  h-[400px]"
+                    src={data.publicUrl}
+                    alt="img"
+                  />
+                  <div
+                    className={cn("flex xs:gap-2 sm:gap-2 lg:gap-4 flex-col")}
                   >
-                    Your most unhappy customers are your greatest source of
-                    learning.
-                  </h1>
-                  <p className="xs:text-xs md:text-sm lg:text-sm font-[500]">
-                    Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind
-                    texts. Separated they live in Bookmarksgrove right at the
-                    coast of the Semantics, a large language ocean.
-                  </p>
+                    <p className="font-bold xs:text-xs  sm:text-sm">
+                      {data2.metadata.category}
+                      <span className="font-[400] text-xs">- {date}</span>
+                    </p>
 
-                  <div className="flex items-center gap-2 mt-4">
-                    <img
-                      src={blog.src}
-                      className="w-[40px] h-[40px] rounded-full"
-                      alt="blog"
-                    />
-                    <div
+                    <h1
                       className={cn(
-                        " flex flex-col gap-1 ",
-                        fontSans.className
+                        "xs:text-sm sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-bold",
+                        poppins.className
                       )}
                     >
-                      <h5 className="text-xs font-bold">Oyatoye David</h5>
-                      <p className="text-xs font-[400]">CEO and Founder</p>
+                      {data2.metadata.title}
+                    </h1>
+                    <p className="xs:text-xs md:text-sm lg:text-sm font-[500]">
+                      {truncatedStr}
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-4">
+                      <img
+                        src={Founder.src}
+                        className="w-[40px] h-[40px] rounded-full"
+                        alt="blog"
+                      />
+                      <div
+                        className={cn(
+                          " flex flex-col gap-1 ",
+                          fontSans.className
+                        )}
+                      >
+                        <h5 className="text-xs font-bold">
+                          {data2.metadata.author}
+                        </h5>
+                        <p className="text-xs font-[400]">CEO and Founder</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
