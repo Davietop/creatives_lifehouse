@@ -1,3 +1,5 @@
+"use client";
+
 import BlogCarousel from "@/components/blogCarousel";
 import BlogNav from "@/components/blogNav";
 import BlogPosts from "@/components/blogPosts";

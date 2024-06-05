@@ -119,12 +119,10 @@ export default function BlogPosts() {
             <div
               onClick={(e) => {
                 const clicked = e.target.closest(".post");
-
+                router.push(`/post/${clicked.dataset.tab}`);
                 setTimeout(() => {
-                  router.push(`/post/${clicked.dataset.tab}`);
+                  location.reload();
                 }, 1000);
-
-                // location.reload();
 
                 if (!clicked) return;
               }}
