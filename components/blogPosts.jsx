@@ -122,7 +122,7 @@ export default function BlogPosts() {
                 router.push(`/post/${clicked.dataset.tab}`);
                 setTimeout(() => {
                   location.reload();
-                }, 380);
+                }, 400);
 
                 if (!clicked) return;
               }}
