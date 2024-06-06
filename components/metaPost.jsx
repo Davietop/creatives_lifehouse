@@ -73,9 +73,10 @@ export default function MetaPost({ idKey }) {
           </div>
         </div>
 
-        {postContentData.map((data) => {
+        {postContentData.map((data, index) => {
           return (
             <div
+              key={index}
               className={cn(
                 "2xl:w-9/12 xl:w-9/12 lg:w-9/12 xs:w-11/12 sm:w-11/12 md:w-10/12",
                 fontSans.className
