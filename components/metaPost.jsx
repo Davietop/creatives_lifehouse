@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { fontSans, poppins } from "@/fonts";
 
 const metaData = {};
+const contentData = [];
 
 const supabase = createClient(
   "https://dveiadlmhbhaqxbckdgz.supabase.co",
@@ -13,6 +14,7 @@ const supabase = createClient(
 
 export default function MetaPost({ idKey }) {
   const [postMetaData, setPostMetaData] = useState(metaData);
+  const [postContentData, setPostContentData] = useState(contentData);
   const [url, setUrl] = useState("");
 
   useEffect(() => {
@@ -24,6 +26,7 @@ export default function MetaPost({ idKey }) {
       });
 
       setPostMetaData(scanned.metadata);
+      setPostContentData(scanned.contentSections);
     }
 
     getData();
@@ -38,9 +41,6 @@ export default function MetaPost({ idKey }) {
     const { data } = supabase.storage
       .from("blogimage")
       .getPublicUrl(`public/${idKey}/${str}`);
-
-    // console.log(data);
-
     setUrl(data.publicUrl);
   }, 2000);
 
@@ -61,17 +61,33 @@ export default function MetaPost({ idKey }) {
 
             <h1
               className={cn(
-                "xs:text-sm xs:text-left sm:text-center  lg:text-base xl:text-xl   font-bold",
+                "xs:text-sm xs:text-left sm:text-center  lg:text-base xl:text-xl mt-2   font-bold",
                 poppins.className
               )}
             >
               {postMetaData.title}
             </h1>
-            <p className="text-sm  xs:text-left sm:text-center font-[500]">
+            <p className="text-sm mt-4 xs:text-left sm:text-center font-[500]">
               {postMetaData.summary}
             </p>
           </div>
         </div>
+
+        {postContentData.map((data) => {
+          return (
+            <div
+              className={cn(
+                "2xl:w-9/12 xl:w-9/12 lg:w-9/12 xs:w-11/12 sm:w-11/12 md:w-10/12",
+                fontSans.className
+              )}
+            >
+              <h1 className="font-bold mb-4">{data.sectionTitle}</h1>
+              <p className="font-[500] text-sm">{data.content}</p>
+              <img src="" />
+              <br />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

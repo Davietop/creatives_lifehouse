@@ -38,6 +38,7 @@ export default function BlogPosts() {
           ...dataBlog,
           blogPosts: data,
         });
+
         return data;
       }
 
@@ -119,6 +120,7 @@ export default function BlogPosts() {
                 const clicked = e.target.closest(".post");
 
                 window.location.href = `/post/${clicked.dataset.tab}`;
+
                 if (!clicked) return;
               }}
               key={index}

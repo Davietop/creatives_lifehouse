@@ -1,5 +1,6 @@
 import BlogNav from "@/components/blogNav";
 import MetaPost from "@/components/metaPost";
+import Footer from "@/components/footer";
 
 export default function Home({ params }) {
   const id = params.id;
@@ -7,6 +8,8 @@ export default function Home({ params }) {
     <>
       <BlogNav />
       <MetaPost idKey={id} />
+
+      <Footer />
     </>
   );
 }
