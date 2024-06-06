@@ -12,6 +12,12 @@ const supabase = createClient(
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2ZWlhZGxtaGJoYXF4YmNrZGd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUxNzU2NzAsImV4cCI6MjAzMDc1MTY3MH0.SxSW5XEb3KQbYHGyt4Yj3SjvfC0LGiVV2BfvcUkvJ2A"
 );
 
+async function getLink(data4) {
+  const { data, error } = await supabase.storage
+    .from("contentimage")
+    .list(`public/${data4.id}`);
+}
+
 export default function MetaPost({ idKey }) {
   const [postMetaData, setPostMetaData] = useState(metaData);
   const [postContentData, setPostContentData] = useState(contentData);
@@ -73,6 +79,7 @@ export default function MetaPost({ idKey }) {
         </div>
 
         {postContentData.map((data, index) => {
+          getLink(data);
           return (
             <div
               key={index}

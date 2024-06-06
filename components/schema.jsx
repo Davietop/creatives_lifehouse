@@ -62,7 +62,7 @@ const verifyOtp = async function (tokenData, toast, router) {
         description: "Verified, Redirecting...",
       });
 
-      setTimeout(() => router.push("/upload"), 1000);
+      window.location.href = `/upload`;
     }
 
     if (!session) {

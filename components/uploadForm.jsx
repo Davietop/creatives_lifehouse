@@ -85,13 +85,17 @@ export default function UploadForm() {
       .from("contentimage")
       .upload(`public/${userId}/${name}`, imagePath);
 
-    console.log(error);
+    return data;
   };
 
   const uploadMetaImage = async (userId, imagePath, name) => {
     const { data, error } = await supabase.storage
       .from("blogimage")
       .upload(`public/${userId}/${name}`, imagePath);
+
+    return data;
+
+    console.log(data, error);
   };
 
   const handleSubmit = async (e) => {
@@ -112,25 +116,31 @@ export default function UploadForm() {
         .select();
 
       if (data) {
-        contentImages.forEach((contentImg, index) => {
+        contentImages.forEach(async (contentImg, index) => {
           const contentSection = blogPost?.contentSections[index];
 
           const file = contentImg.files[0] ? contentImg.files[0] : "";
           const name = contentImg.files[0] ? contentImg.files[0].name : "";
 
-          uploadMetaImage(
+          const met = await uploadMetaImage(
             data[0].id,
             metaImage.files[0],
             metaImage.files[0].name
           );
-          uploadContentImages(contentSection.id, file, name);
-        });
+          const con = await uploadContentImages(contentSection.id, file, name);
 
-        toast({
-          description: "Upload Successful, redirecting to blog page...",
+          console.log(met, con);
+          if (met.path && con.path) {
+            toast({
+              description: "Upload Successful, redirecting to blog page...",
+            });
+
+            setTimeout(() => {
+              window.location.href = `/blog`;
+            }, 2000);
+            setLoading(false);
+          }
         });
-        setTimeout(() => router.push("/blog"), 2000);
-        setLoading(false);
       }
 
       if (error) {
@@ -259,7 +269,7 @@ export default function UploadForm() {
           </Button>
         </div>
 
-        <Button2 type="submit" value="Upload Blog Post">
+        <Button2 isLoading={loading} type="submit" value="Upload Blog Post">
           Upload Blog
         </Button2>
       </form>
