@@ -41,6 +41,7 @@ const Pagination2 = (props) => {
   };
 
   let lastPage = paginationRange[paginationRange.length - 1];
+
   return (
     <div className="">
       <Pagination

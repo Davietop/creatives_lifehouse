@@ -20,7 +20,6 @@ export default function MetaPost({ idKey }) {
   useEffect(() => {
     async function getData() {
       const { data, error } = await supabase.from("blogpost").select("");
-
       const scanned = data.find((ret) => {
         return ret.id === idKey;
       });

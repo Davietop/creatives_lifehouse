@@ -22,7 +22,7 @@ const metaBlog = {
 };
 const urlPath = [];
 
-export default function BlogPosts() {
+export default function BlogPosts({ dataBlogg }) {
   const [blogData, setBlogData] = useState(dataBlog);
   const [metaData, setMetaData] = useState(metaBlog);
   const [url, setUrl] = useState(urlPath);
@@ -94,11 +94,12 @@ export default function BlogPosts() {
       <h1
         className={cn("mt-14 text-xl font-bold text-center", poppins.className)}
       >
-        Blogs
+        Blog Contents
       </h1>
 
       <div className="mt-6 flex items-center justify-center  gap-14  w-full basis-3/12 flex-wrap  xs:flex-col md:flex-row">
-        {blogData.blogPosts.map((data2, index) => {
+        {dataBlogg?.map((data2, index) => {
+          if (!data2) return;
           const str = data2.metadata.img.split("\\")[2];
 
           const { data } = supabase.storage

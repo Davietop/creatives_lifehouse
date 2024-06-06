@@ -9,6 +9,11 @@
   --slide-size: 100%;
 }
 
+.emblaImg {
+  width: fit-content;
+  height: 380px;
+}
+
 .embla__slide {
   flex: 0 0 var(--slide-size);
   min-width: 0;

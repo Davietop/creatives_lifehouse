@@ -130,8 +130,6 @@ const EmblaCarousel = (props) => {
         offset: 0,
         sortBy: { column: "name", order: "asc" },
       });
-
-    console.log(data);
   }
 
   return (
@@ -161,7 +159,7 @@ const EmblaCarousel = (props) => {
               <div data-tab={data2.id} className="embla__slide " key={index}>
                 <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center xs:gap-6 lg:gap-10 xs:flex-col lg:flex-row m-[20px]">
                   <img
-                    className="lg:w-5/12 xs:w-full rounded-lg  h-[400px]"
+                    className="emblaImg rounded-lg  h-[400px]"
                     src={data.publicUrl}
                     alt="img"
                   />

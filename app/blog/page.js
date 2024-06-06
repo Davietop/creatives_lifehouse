@@ -14,8 +14,6 @@ export default function BlogPage() {
       <Trendingblog />
       <BlogCarousel />
 
-      <BlogPosts />
-      {/* <PaginationDemo /> */}
       <Pag />
       <Footer />
     </div>
