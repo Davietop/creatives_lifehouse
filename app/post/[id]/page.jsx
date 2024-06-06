@@ -1,7 +1,12 @@
-export default function Home() {
+import BlogNav from "@/components/blogNav";
+import MetaPost from "@/components/metaPost";
+
+export default function Home({ params }) {
+  const id = params.id;
   return (
     <>
-      <h2>details</h2>
+      <BlogNav />
+      <MetaPost idKey={id} />
     </>
   );
 }

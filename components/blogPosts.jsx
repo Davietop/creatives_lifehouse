@@ -28,8 +28,6 @@ export default function BlogPosts() {
   const [url, setUrl] = useState(urlPath);
   const router = useRouter();
 
-  const name = router.query;
-
   let fill = [];
 
   useEffect(() => {
@@ -91,7 +89,7 @@ export default function BlogPosts() {
 
   const maxLength = 191;
   return (
-    <div className="mb-20">
+    <div id="child-to-remove" className="mb-20">
       <h1
         className={cn("mt-14 text-xl font-bold text-center", poppins.className)}
       >
@@ -119,11 +117,8 @@ export default function BlogPosts() {
             <div
               onClick={(e) => {
                 const clicked = e.target.closest(".post");
-                router.push(`/post/${clicked.dataset.tab}`);
-                setTimeout(() => {
-                  location.reload();
-                }, 500);
 
+                window.location.href = `/post/${clicked.dataset.tab}`;
                 if (!clicked) return;
               }}
               key={index}
