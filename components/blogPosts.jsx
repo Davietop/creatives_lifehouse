@@ -139,13 +139,10 @@ export default function BlogPosts({ dataBlogg }) {
                 />
               </div>
 
-              <div
-                className={cn(
-                  "flex xs:gap-2  flex-col",
-                  merriweather.className
-                )}
-              >
-                <p className="font-[900] text-base">
+              <div className={cn("flex xs:gap-2  flex-col")}>
+                <p
+                  className={cn("font-[900] text-base", merriweather.className)}
+                >
                   {data2.metadata.category}
                   <span className="text-xs font-[400]"> - {date}</span>
                 </p>
@@ -158,7 +155,7 @@ export default function BlogPosts({ dataBlogg }) {
                 >
                   {data2.metadata.title}
                 </h1>
-                <p className="text-sm font-[500]">{truncatedStr}</p>
+                <p className={cn("text-sm font-[500]")}>{truncatedStr}</p>
 
                 <div className="flex items-center gap-2 mt-4">
                   <img
@@ -166,7 +163,7 @@ export default function BlogPosts({ dataBlogg }) {
                     alt="blog"
                     className="w-[40px] h-[40px] rounded-full"
                   />
-                  <div className="text-xs ">
+                  <div className={cn("text-xs ", merriweather.className)}>
                     <h5 className="font-[900]"> {data2.metadata.author}</h5>
                     <p className="font-[700]">Team Lead</p>
                   </div>
