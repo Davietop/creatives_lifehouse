@@ -6,11 +6,23 @@ import {
   Poppins,
   Lato,
   Roboto,
+  Noto_Sans_Georgian,
+  Merriweather,
 } from "next/font/google";
 import { Inter as FontSans } from "next/font/google";
 
 export const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
+export const noto_sans_georgian = Noto_Sans_Georgian({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  display: "swap",
+});
+export const merriweather = Merriweather({
+  weight: ["300", "400", "700", "900"],
   subsets: ["latin"],
   display: "swap",
 });

@@ -9,7 +9,7 @@ import {
 import useEmblaCarousel from "embla-carousel-react";
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { fontSans, poppins } from "@/fonts";
+import { fontSans, merriweather, poppins } from "@/fonts";
 import Image from "next/image";
 import blog from "../public/blog.jpg";
 import Founder from "../public/timi2.png";
@@ -159,29 +159,32 @@ const EmblaCarousel = (props) => {
               <div data-tab={data2.id} className="embla__slide " key={index}>
                 <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center xs:gap-6 lg:gap-10 xs:flex-col lg:flex-row m-[20px]">
                   <img
-                    className="emblaImg rounded-lg  h-[400px]"
+                    className="rounded-lg object-cover md:w-[700px] md:h-[450px] lg:w-[400px] xl:w-[550px] w-[370px] h-[400px] xs:w-full"
                     src={data.publicUrl}
                     alt="img"
                   />
                   <div
                     className={cn("flex xs:gap-2 sm:gap-2 lg:gap-4 flex-col")}
                   >
-                    <p className="font-bold xs:text-xs  sm:text-sm">
+                    <p
+                      className={cn(
+                        "font-[900] text-base",
+                        merriweather.className
+                      )}
+                    >
                       {data2.metadata.category}
                       <span className="font-[400] text-xs">- {date}</span>
                     </p>
 
                     <h1
                       className={cn(
-                        "xs:text-sm sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-bold",
-                        poppins.className
+                        "xs:text-lg sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-[900]",
+                        merriweather.className
                       )}
                     >
                       {data2.metadata.title}
                     </h1>
-                    <p className="xs:text-xs md:text-sm lg:text-sm font-[500]">
-                      {truncatedStr}
-                    </p>
+                    <p className="text-base font-[500]">{truncatedStr}</p>
 
                     <div className="flex items-center gap-2 mt-4">
                       <img
@@ -192,13 +195,13 @@ const EmblaCarousel = (props) => {
                       <div
                         className={cn(
                           " flex flex-col gap-1 ",
-                          fontSans.className
+                          merriweather.className
                         )}
                       >
-                        <h5 className="text-xs font-bold">
+                        <h5 className="text-xs font-[900]">
                           {data2.metadata.author}
                         </h5>
-                        <p className="text-xs font-[400]">CEO and Founder</p>
+                        <p className="text-xs font-[400]">Team Lead</p>
                       </div>
                     </div>
                   </div>

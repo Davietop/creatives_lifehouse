@@ -82,8 +82,8 @@ export default function UploadForm() {
 
   const uploadContentImages = async function (userId, imagePath, name) {
     const { data, error } = await supabase.storage
-      .from("contentimage")
-      .upload(`public/${userId}/${name}`, imagePath);
+      .from("blogimage")
+      .upload(`content/${userId}/${name}`, imagePath);
 
     return data;
   };

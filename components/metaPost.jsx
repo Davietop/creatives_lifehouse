@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { cn } from "@/lib/utils";
-import { fontSans, poppins } from "@/fonts";
+import { fontSans, poppins, noto_sans_georgian, merriweather } from "@/fonts";
 
 const metaData = {};
 const contentData = [];
@@ -13,9 +13,16 @@ const supabase = createClient(
 );
 
 async function getLink(data4) {
-  const { data, error } = await supabase.storage
-    .from("contentimage")
-    .list(`public/${data4.id}`);
+  // const { data, error } = await supabase.storage
+  //   .from("blogimage")
+  //   .list(`content/${data4.id}`);
+  // console.log(data4.id);
+
+  const { data } = supabase.storage
+    .from("blogimage")
+    .getPublicUrl(`content/${data4.id}/${str}`);
+
+  console.log(data);
 }
 
 export default function MetaPost({ idKey }) {
@@ -51,47 +58,67 @@ export default function MetaPost({ idKey }) {
 
   return (
     <div>
-      <div className="mt-6 flex items-center justify-center  gap-14  w-full basis-3/12 flex-wrap  xs:flex-col md:flex-row">
+      <div className="mt-6 mb-20 flex items-center justify-center  gap-14  w-full basis-3/12 flex-wrap  xs:flex-col md:flex-row">
         <div
           key={idKey}
           data-tab={idKey}
-          className="post text-center flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-9/12 xl:w-9/12 lg:w-9/12 xs:w-11/12 sm:w-11/12 md:w-10/12 "
+          className={cn(
+            "post text-center flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-9/12 xl:w-9/12 lg:w-9/12 xs:w-11/12 sm:w-11/12 md:w-10/12 ",
+            merriweather.className
+          )}
         >
-          <img className="rounded-lg" src={url} alt="img" />
-          <div className={cn("flex xs:gap-2  flex-col", fontSans.className)}>
-            <p className="font-bold text-sm xs:text-left sm:text-center ">
+          <h1
+            className={cn(
+              "xs:text-3xl xs:mt-4 md:text-4xl  text-center lg:text-4xl xl:text-5xl xl:mt-10   font-[900]",
+              merriweather.className
+            )}
+          >
+            {postMetaData.title}
+          </h1>
+          <img className="rounded-lg mt-10" src={url} alt="img" />
+          <div className={cn("flex xs:gap-2  flex-col")}>
+            <p className="font-[900] text-lg xs:text-left sm:text-center ">
               {postMetaData.category}
               <span className="text-sm font-[400]"> - {date}</span>
             </p>
 
-            <h1
-              className={cn(
-                "xs:text-sm xs:text-left sm:text-center  lg:text-base xl:text-xl mt-2   font-bold",
-                poppins.className
-              )}
-            >
-              {postMetaData.title}
-            </h1>
-            <p className="text-sm mt-4 xs:text-left sm:text-center font-[500]">
+            <p className="xs:text-lg md:text-xl  xl:text-2xl text-left mt-4 font-[500]">
               {postMetaData.summary}
             </p>
           </div>
         </div>
 
-        {postContentData.map((data, index) => {
-          getLink(data);
+        {postContentData.map((data4, index) => {
+          const str = data4.mediaImage.split("\\")[2];
+
+          const { data } = supabase.storage
+            .from("blogimage")
+            .getPublicUrl(`content/${data4.id}/${str}`);
+
+          console.log(data.publicUrl.split("/")[10]);
+
           return (
             <div
               key={index}
               className={cn(
                 "2xl:w-9/12 xl:w-9/12 lg:w-9/12 xs:w-11/12 sm:w-11/12 md:w-10/12",
-                fontSans.className
+                merriweather.className
               )}
             >
-              <h1 className="font-bold mb-4">{data.sectionTitle}</h1>
-              <p className="font-[500] text-sm">{data.content}</p>
-              <img src="" />
-              <br />
+              <h1 className="font-[900] xs:text-2xl xl:text-3xl mb-4">
+                {data4.sectionTitle}
+              </h1>
+              <p className="font-[500] xs:text-lg md:text-xl  xl:text-xl">
+                {data4.content}
+              </p>
+
+              {data.publicUrl.split("/")[10] === "undefined" ? (
+                <p></p>
+              ) : (
+                <img className="mx-auto mt-6" src={data.publicUrl} />
+              )}
+
+              {/* <br /> */}
             </div>
           );
         })}

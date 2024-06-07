@@ -85,7 +85,7 @@ export default function Footer() {
               <Link className="self-end pb-2" href="/about">
                 About us
               </Link>
-              <Link className="text-right w-full pb-2" href="/">
+              <Link className="text-right w-full pb-2" href="/blog">
                 Blogs
               </Link>
             </div>

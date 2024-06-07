@@ -1,7 +1,7 @@
 "use client";
 import blog from "../public/blog.jpg";
 import { cn } from "@/lib/utils";
-import { fontSans, poppins } from "@/fonts";
+import { fontSans, merriweather, poppins } from "@/fonts";
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Founder from "../public/timi2.png";
@@ -90,9 +90,12 @@ export default function BlogPosts({ dataBlogg }) {
 
   const maxLength = 191;
   return (
-    <div id="child-to-remove" className="mb-20">
+    <div id="child-to-remove " className="mb-20">
       <h1
-        className={cn("mt-14 text-xl font-bold text-center", poppins.className)}
+        className={cn(
+          "mt-14 text-xl font-[900] text-center",
+          merriweather.className
+        )}
       >
         Blog Contents
       </h1>
@@ -126,26 +129,36 @@ export default function BlogPosts({ dataBlogg }) {
               }}
               key={index}
               data-tab={data2.id}
-              className="post flex flex-col items-center gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-10/12 sm:w-10/12 md:w-5/12 "
+              className="post cursor-pointer flex flex-col  gap-6 xs:gap-4 justify-center 2xl:w-3/12 xl:w-3/12 lg:w-4/12 xs:w-11/12 sm:w-9/12 md:w-5/12 "
             >
-              <img className="rounded-lg" src={data.publicUrl} alt="img" />
+              <div>
+                <img
+                  className="rounded-lg  object-cover md:w-[350px] md:h-[300px] xs:w-full xs:h-[400px] lg:w-[400px] lg:h-[300px]"
+                  src={data.publicUrl}
+                  alt="img"
+                />
+              </div>
+
               <div
-                className={cn("flex xs:gap-2  flex-col", fontSans.className)}
+                className={cn(
+                  "flex xs:gap-2  flex-col",
+                  merriweather.className
+                )}
               >
-                <p className="font-bold text-xs">
+                <p className="font-[900] text-base">
                   {data2.metadata.category}
                   <span className="text-xs font-[400]"> - {date}</span>
                 </p>
 
                 <h1
                   className={cn(
-                    "xs:text-sm lg:text-base   font-bold",
-                    poppins.className
+                    "text-base   font-[900]",
+                    merriweather.className
                   )}
                 >
                   {data2.metadata.title}
                 </h1>
-                <p className="text-xs font-[500]">{truncatedStr}</p>
+                <p className="text-sm font-[500]">{truncatedStr}</p>
 
                 <div className="flex items-center gap-2 mt-4">
                   <img
@@ -154,8 +167,8 @@ export default function BlogPosts({ dataBlogg }) {
                     className="w-[40px] h-[40px] rounded-full"
                   />
                   <div className="text-xs ">
-                    <h5 className="font-bold"> {data2.metadata.author}</h5>
-                    <p className="font-[400]">CEO and Founder</p>
+                    <h5 className="font-[900]"> {data2.metadata.author}</h5>
+                    <p className="font-[700]">Team Lead</p>
                   </div>
                 </div>
               </div>
