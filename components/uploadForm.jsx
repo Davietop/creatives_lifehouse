@@ -60,6 +60,12 @@ export default function UploadForm() {
       img: e.target.value,
     });
   };
+  const handleCategoryChange = (e) => {
+    setMetadata({
+      ...metadata,
+      category: e.target.value.toLowerCase(),
+    });
+  };
 
   const handleContentChange = (index, e) => {
     const newContentSections = [...contentSections];
@@ -94,8 +100,6 @@ export default function UploadForm() {
       .upload(`public/${userId}/${name}`, imagePath);
 
     return data;
-
-    console.log(data, error);
   };
 
   const handleSubmit = async (e) => {
@@ -104,10 +108,13 @@ export default function UploadForm() {
     const contentImages = document.querySelectorAll("#mediaImage");
 
     e.preventDefault();
+
     const blogPost = {
       metadata,
       contentSections,
     };
+
+    console.log(blogPost.metadata);
 
     try {
       const { data, error } = await supabase
@@ -194,7 +201,7 @@ export default function UploadForm() {
             type="text"
             name="category"
             value={metadata.category}
-            onChange={handleMetadataChange}
+            onChange={handleCategoryChange}
             required
           />
 

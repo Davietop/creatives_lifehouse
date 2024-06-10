@@ -14,6 +14,7 @@ import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { merriweather } from "@/fonts";
+import Pagination2 from "./pagination";
 
 const supabase = createClient(
   "https://dveiadlmhbhaqxbckdgz.supabase.co",
@@ -24,8 +25,20 @@ const blogs = {
   dataBlog: [],
 };
 
+let PageSize = 1;
+
 export default function DrawerSearch({ query }) {
-  console.log(query);
+  // if(query.typeOf === string)
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const firstPageIndex = (currentPage - 1) * PageSize;
+  const lastPageIndex = firstPageIndex + PageSize;
+  const currentTableData = query.dataResult.slice(
+    firstPageIndex,
+    lastPageIndex
+  );
+
   function truncateStringAtWordBoundary(str, maxLength, text) {
     if (str.length <= maxLength) {
       return str;
@@ -48,8 +61,7 @@ export default function DrawerSearch({ query }) {
         <DrawerHeader>
           <DrawerTitle></DrawerTitle>
         </DrawerHeader>
-        {query.dataResult?.map((result, index) => {
-          console.log(result);
+        {currentTableData.map((result, index) => {
           const date = new Date(result.publishDate).toDateString();
           const truncatedStr = truncateStringAtWordBoundary(
             result.summary,
@@ -80,7 +92,14 @@ export default function DrawerSearch({ query }) {
 
               <div className={cn("flex xs:gap-2  flex-col")}>
                 <p className={cn("font-[900] text-xs", merriweather.className)}>
-                  {result.category}
+                  {result.category
+                    ? result.category
+                        .split(" ")
+                        .map(
+                          (word) => word.charAt(0).toUpperCase() + word.slice(1)
+                        )
+                        .join(" ")
+                    : ""}
                   <span className="text-xs font-[400]"> - {date}</span>
                 </p>
 
@@ -96,6 +115,14 @@ export default function DrawerSearch({ query }) {
         })}
 
         <DrawerFooter>
+          <Pagination2
+            className="pagination-bar mb-2"
+            currentPage={currentPage}
+            totalCount={query.dataResult.length}
+            pageSize={PageSize}
+            onPageChange={(page) => setCurrentPage(page)}
+          />
+
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>

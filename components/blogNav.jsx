@@ -28,6 +28,11 @@ import DrawerSearch from "./drawerSearch";
 import { Drawer, DrawerTrigger } from "./ui/drawer";
 import { Button } from "./ui/button";
 import { createClient } from "@supabase/supabase-js";
+import Pag from "./searchPag";
+import Pag2 from "./searchPag";
+import { useToast } from "./ui/use-toast";
+
+let PageSize = 6;
 
 const supabase = createClient(
   "https://dveiadlmhbhaqxbckdgz.supabase.co",
@@ -44,6 +49,7 @@ const resultBlog = {
 export default function BlogNav() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState(resultBlog);
+  const { toast } = useToast();
 
   const [blogData, setBlogData] = useState(blogs);
   useEffect(() => {
@@ -71,6 +77,11 @@ export default function BlogNav() {
       <div className="xs:hidden pt-4 pb-4 sm:flex items-center justify-around ">
         <div className="border-0 shadow bg-white  w-2/12  border p-2.5 rounded-full flex items-center  gap-3 sm:w-3/12  md:w-3/12 lg:w-[22%] ">
           <input
+            onChange={() => {
+              setQuery(
+                document.querySelector("#text").value.trim().toLowerCase()
+              );
+            }}
             style={{
               borderBottomStyle: "none",
             }}
@@ -83,24 +94,28 @@ export default function BlogNav() {
             placeholder="Search by category"
           />
 
-          <Drawer>
+          <Drawer className="relative">
             <DrawerTrigger asChild>
               <Image
                 onClick={() => {
-                  setQuery(document.querySelector("#text").value);
                   const checked = blogData.dataBlog.filter((check) => {
                     return check.metadata.category.includes(query);
                   });
 
+                  if (checked.length === 0) {
+                    toast({
+                      description: "No Result Found, Try again later...",
+                    });
+                  }
+
                   const searchResult = checked.map((data2) => {
                     if (!data2) return;
+
                     const str = data2.metadata.img.split("\\")[2];
 
                     const { data } = supabase.storage
                       .from("blogimage")
                       .getPublicUrl(`public/${data2.id}/${str}`);
-
-                    console.log(data2);
 
                     return {
                       url: data.publicUrl,
@@ -117,8 +132,6 @@ export default function BlogNav() {
                     ...resultBlog,
                     dataResult: searchResult,
                   });
-
-                  console.log(result);
                 }}
                 className="cursor-pointer"
                 src={search.src}
@@ -127,17 +140,24 @@ export default function BlogNav() {
                 alt="search"
               />
             </DrawerTrigger>
-            <DrawerSearch query={result} />
+
+            {result.dataResult.length === 0 ? (
+              ""
+            ) : (
+              <DrawerSearch query={result} />
+            )}
           </Drawer>
         </div>
 
-        <Image
-          src={logo}
-          className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
-          width={80}
-          height={80}
-          alt="logo"
-        />
+        <Link href="/">
+          <Image
+            src={logo}
+            className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
+            width={80}
+            height={80}
+            alt="logo"
+          />
+        </Link>
 
         <div className="socials flex items-center  gap-6  ">
           <Link href="https://www.linkedin.com/company/lifehouse-creatives/">
@@ -178,13 +198,15 @@ export default function BlogNav() {
       </div>
 
       <div className="sm:hidden xs:flex gap-3  flex-col pt-2 pb-10 ">
-        <Image
-          src={logo}
-          className="mx-auto sm:w-[70px] md:w-[80px] lg:w-[80px]"
-          width={80}
-          height={80}
-          alt="logo"
-        />
+        <Link href="/">
+          <Image
+            src={logo}
+            className="mx-auto sm:w-[70px] md:w-[80px] lg:w-[80px]"
+            width={80}
+            height={80}
+            alt="logo"
+          />
+        </Link>
 
         <div className="flex pb-2 items-center justify-between pl-8 pr-8">
           <div className="socials flex items-center  gap-6  ">
@@ -227,11 +249,15 @@ export default function BlogNav() {
 
         <div className="border-0 shadow mx-auto  w-11/12 border mt-2 p-3.5 rounded-full flex items-center  justify-center gap-3  ">
           <input
+            onChange={() => {
+              setQuery(
+                document.querySelector(".text").value.trim().toLowerCase()
+              );
+            }}
             style={{
               borderBottomStyle: "none",
             }}
             type="text"
-            id="text"
             className={cn(
               "text sm:text-sm xs:text-xs mt-[-0.1px] w-full outline-none ",
               poppins.className
@@ -239,24 +265,28 @@ export default function BlogNav() {
             placeholder="Search by category"
           />
 
-          <Drawer>
+          <Drawer className="relative">
             <DrawerTrigger asChild>
               <Image
                 onClick={() => {
-                  setQuery(document.querySelector("#text").value);
                   const checked = blogData.dataBlog.filter((check) => {
                     return check.metadata.category.includes(query);
                   });
 
+                  if (checked.length === 0) {
+                    toast({
+                      description: "No Result Found, Try again later...",
+                    });
+                  }
+
                   const searchResult = checked.map((data2) => {
                     if (!data2) return;
+
                     const str = data2.metadata.img.split("\\")[2];
 
                     const { data } = supabase.storage
                       .from("blogimage")
                       .getPublicUrl(`public/${data2.id}/${str}`);
-
-                    console.log(data2);
 
                     return {
                       url: data.publicUrl,
@@ -273,8 +303,6 @@ export default function BlogNav() {
                     ...resultBlog,
                     dataResult: searchResult,
                   });
-
-                  console.log(result);
                 }}
                 className="cursor-pointer"
                 src={search.src}
@@ -283,7 +311,12 @@ export default function BlogNav() {
                 alt="search"
               />
             </DrawerTrigger>
-            <DrawerSearch query={result} />
+
+            {result.dataResult.length === 0 ? (
+              ""
+            ) : (
+              <DrawerSearch query={result} />
+            )}
           </Drawer>
         </div>
       </div>

@@ -43,9 +43,8 @@ export default function MetaPost({ idKey }) {
 
     getData();
   }, [metaData]);
-
-  const date = new Date(postMetaData.publishDate).toDateString();
   if (!postMetaData) return;
+  const date = new Date(postMetaData.publishDate).toDateString();
 
   setTimeout(() => {
     const str = postMetaData.img?.split("\\")[2];
@@ -78,7 +77,12 @@ export default function MetaPost({ idKey }) {
           <img className="rounded-lg mt-10" src={url} alt="img" />
           <div className={cn("flex xs:gap-2  flex-col")}>
             <p className="font-[900] text-lg xs:text-left sm:text-center ">
-              {postMetaData.category}
+              {postMetaData.category
+                ? postMetaData.category
+                    .split(" ")
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(" ")
+                : ""}
               <span className="text-sm font-[400]"> - {date}</span>
             </p>
 
@@ -94,8 +98,6 @@ export default function MetaPost({ idKey }) {
           const { data } = supabase.storage
             .from("blogimage")
             .getPublicUrl(`content/${data4.id}/${str}`);
-
-          console.log(data.publicUrl.split("/")[10]);
 
           return (
             <div
@@ -117,8 +119,6 @@ export default function MetaPost({ idKey }) {
               ) : (
                 <img className="mx-auto mt-6" src={data.publicUrl} />
               )}
-
-              {/* <br /> */}
             </div>
           );
         })}

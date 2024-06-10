@@ -143,7 +143,14 @@ export default function BlogPosts({ dataBlogg }) {
                 <p
                   className={cn("font-[900] text-base", merriweather.className)}
                 >
-                  {data2.metadata.category}
+                  {data2.metadata.category
+                    ? data2.metadata.category
+                        .split(" ")
+                        .map(
+                          (word) => word.charAt(0).toUpperCase() + word.slice(1)
+                        )
+                        .join(" ")
+                    : ""}
                   <span className="text-xs font-[400]"> - {date}</span>
                 </p>
 

@@ -64,32 +64,36 @@ export default function NavAbout() {
 
         <NavbarContent className="sm:hidden">
           <NavbarBrand>
-            <Image
-              alt="image"
-              className="lg:w-[100px]"
-              src={logo}
-              width={80}
-              height={80}
-            />
+            <Link href="/">
+              <Image
+                alt="image"
+                className="lg:w-[100px]"
+                src={logo}
+                width={80}
+                height={80}
+              />
+            </Link>
           </NavbarBrand>
         </NavbarContent>
 
         <NavbarContent className="hidden sm:flex gap-10" justify="center">
           <NavbarBrand>
-            <Image
-              alt="image"
-              className="lg:w-[100px]"
-              src={logo}
-              width={100}
-              height={100}
-            />
+            <Link href="/">
+              <Image
+                alt="image"
+                className="lg:w-[100px]"
+                src={logo}
+                width={100}
+                height={100}
+              />
+            </Link>
           </NavbarBrand>
-          <NavbarItem>
+          <NavbarItem isActive>
             <Link color="foreground" href="/">
               Home
             </Link>
           </NavbarItem>
-          <NavbarItem>
+          <NavbarItem isActive>
             <Link color="foreground" href="/about">
               About Us
             </Link>
@@ -133,21 +137,21 @@ export default function NavAbout() {
                     <div className="mt-10 text-left flex flex-col  gap-10">
                       <h1>
                         Call Us At: <br />
-                        <span className="ml-10  font-bold text-base">
+                        <span className="ml-6  font-bold text-base">
                           {" "}
                           +(234) 903-224-5613
                         </span>
                       </h1>
                       <h1>
                         You Can Find Us At: <br />
-                        <span className="ml-10  font-bold text-base">
+                        <span className="ml-6  font-bold text-base">
                           {" "}
                           Lagos Nigeria
                         </span>
                       </h1>
                       <h1>
                         Email Now: <br />
-                        <span className="ml-10  font-bold text-base">
+                        <span className="ml-6  font-bold text-base">
                           {" "}
                           info@lifehousecreatives.com
                         </span>

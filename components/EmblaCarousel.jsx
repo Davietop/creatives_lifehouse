@@ -15,6 +15,7 @@ import blog from "../public/blog.jpg";
 import Founder from "../public/timi2.png";
 
 import { createClient } from "@supabase/supabase-js";
+import Link from "next/link";
 
 const supabase = createClient(
   "https://dveiadlmhbhaqxbckdgz.supabase.co",
@@ -156,7 +157,11 @@ const EmblaCarousel = (props) => {
             );
 
             return (
-              <div data-tab={data2.id} className="embla__slide " key={index}>
+              <div
+                data-tab={data2.id}
+                className="post embla__slide "
+                key={index}
+              >
                 <div className="embla__slide__number    rounded-[1.8rem] font-[600]  flex items-center xs:gap-6 lg:gap-10 xs:flex-col lg:flex-row m-[20px]">
                   <img
                     className="rounded-lg object-cover md:w-[700px] md:h-[450px] lg:w-[400px] xl:w-[550px] w-[370px] h-[400px] xs:w-full"
@@ -172,18 +177,32 @@ const EmblaCarousel = (props) => {
                         merriweather.className
                       )}
                     >
-                      {data2.metadata.category}
+                      {data2.metadata.category
+                        ? data2.metadata.category
+                            .split(" ")
+                            .map(
+                              (word) =>
+                                word.charAt(0).toUpperCase() + word.slice(1)
+                            )
+                            .join(" ")
+                        : ""}
                       <span className="font-[400] text-xs">- {date}</span>
                     </p>
 
                     <h1
+                      onClick={(e) => {
+                        const clicked = e.target.closest(".post");
+
+                        window.location.href = `/post/${clicked.dataset.tab}`;
+                      }}
                       className={cn(
-                        "xs:text-lg sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-[900]",
+                        "xs:text-lg sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl font-[900] cursor-pointer",
                         merriweather.className
                       )}
                     >
                       {data2.metadata.title}
                     </h1>
+
                     <p className="text-base font-[500]">{truncatedStr}</p>
 
                     <div className="flex items-center gap-2 mt-4">

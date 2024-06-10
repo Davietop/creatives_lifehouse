@@ -28,13 +28,15 @@ export default function UploadNav() {
   return (
     <nav>
       <div className="xs:hidden pt-4 pb-4 sm:flex items-center justify-around ">
-        <Image
-          src={logo}
-          className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
-          width={80}
-          height={80}
-          alt="logo"
-        />
+        <Link href="/">
+          <Image
+            src={logo}
+            className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
+            width={80}
+            height={80}
+            alt="logo"
+          />
+        </Link>
 
         <div className="socials flex items-center  gap-6  ">
           <Link href="https://www.linkedin.com/company/lifehouse-creatives/">
