@@ -55,8 +55,8 @@ module.exports = {
       },
       backgroundImage: {
         vr_Img: "url('../public/newPic.jpg')",
-        bg_img: "url('../public/bg_img.jpg')",
-        bg_test2: "url('../public/test2.jpg')",
+        bg_img: "url('../public/bg_img.webp')",
+        bg_test2: "url('../public/test2.webp')",
         gradient: "url('../public/rhombus.jpg')",
 
         line1: "url('../public/linee.jpg')",
@@ -65,27 +65,10 @@ module.exports = {
 
         box: "url('../public/box3.png')",
         service: "url('../public/service.png')",
-        faq1: "url('../public/faq1.jpg')",
-        faq2: "url('../public/faq2.jpg')",
-        faq3: "url('../public/faq3.avif')",
-        faq4: "url('../public/faq4.jpg')",
-        faq5: "url('../public/manPic.png')",
-        bg_members_1: "url('../public/members/members_bg_1.jpg')",
-        bg_members_2: "url('../public/members/members_bg_2.jpg')",
-        bg_members_3: "url('../public/members/members_bg_3.jpg')",
-        bg_members_4: "url('../public/members/members_bg_4.jpg')",
-        bg_members_5: "url('../public/members/members_bg_5.jpg')",
+
         bg_members_6: "url('../public/members/members_bg_6.jpg')",
-        team: "url('../public/team/team1.jpg')",
-        team2: "url('../public/team/team2.jpg')",
-        team3: "url('../public/team/team3.jpg')",
-        team4: "url('../public/team/team4.jpg')",
-        // team5: "url('../public/team/team5.jpg')",
-        team6: "url('../public/team/team6.jpg')",
-        team7: "url('../public/team/team7.png')",
-        team8: "url('../public/team/team8.jpg')",
-        team9: "url('../public/team/team9.jpg')",
-        form: "url('../public/form.jpg')",
+
+        form: "url('../public/form.webp')",
       },
       keyframes: {
         "accordion-down": {

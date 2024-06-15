@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
 import { fontSans, poppins } from "@/fonts";
 import { CardWithForm } from "./card";
-import Email from "../public/email.jpg";
-import Digital from "../public/automation3.png";
-import Crm from "../public/crm.jpg";
+import Email from "../public/email.webp";
+import Digital from "../public/automation3.webp";
+import Crm from "../public/crm.webp";
 
 const card = [
   {

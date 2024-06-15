@@ -10,9 +10,9 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Image } from "@nextui-org/react";
-import Founder from "../public/timi.png";
-import Hod from "../public/fiyin_Pic.png";
-import CoFounder from "../public/miss.png";
+import Founder from "../public/timi.webp";
+import Hod from "../public/fiyin_Pic.webp";
+import CoFounder from "../public/miss.webp";
 
 import Link from "next/link";
 

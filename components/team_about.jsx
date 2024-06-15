@@ -1,8 +1,8 @@
 import { fontSans, open_Sans, poppins } from "@/fonts";
 import { cn } from "@/lib/utils";
-import Founder from "../public/timi2.png";
-import Hod from "../public/fiyin_Pic.png";
-import CoFounder from "../public/miss2.png";
+import Founder from "../public/timi2.webp";
+import Hod from "../public/fiyin_Pic.webp";
+import CoFounder from "../public/miss2.webp";
 import Image from "next/image";
 import {
   Card,

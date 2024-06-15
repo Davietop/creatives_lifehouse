@@ -34,7 +34,7 @@ export default function DrawerSearch({ query }) {
 
   const firstPageIndex = (currentPage - 1) * PageSize;
   const lastPageIndex = firstPageIndex + PageSize;
-  const currentTableData = query.dataResult.slice(
+  const currentTableData = query?.dataResult?.slice(
     firstPageIndex,
     lastPageIndex
   );

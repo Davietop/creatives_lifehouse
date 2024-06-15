@@ -7,8 +7,6 @@ import {
 } from "@/components/ui/card";
 import { Image } from "@nextui-org/react";
 
-import Crm from "../public/crm.jpg";
-
 const style = {
   /* From https://css.glass */
   background: "rgba(255, 255, 255, 1)",
