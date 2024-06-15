@@ -11,8 +11,8 @@ import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { fontSans, merriweather, poppins } from "@/fonts";
 import Image from "next/image";
-import blog from "../public/blog.jpg";
-import Founder from "../public/timi2.png";
+
+import Founder from "../public/timi2.webp";
 
 import { createClient } from "@supabase/supabase-js";
 import Link from "next/link";

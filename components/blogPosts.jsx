@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { fontSans, merriweather, poppins } from "@/fonts";
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import Founder from "../public/timi2.png";
+import Founder from "../public/timi2.webp";
 import { useRouter } from "next/navigation";
 
 import Link from "next/link";
