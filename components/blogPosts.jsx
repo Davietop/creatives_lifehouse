@@ -1,5 +1,5 @@
 "use client";
-import blog from "../public/blog.jpg";
+
 import { cn } from "@/lib/utils";
 import { fontSans, merriweather, poppins } from "@/fonts";
 import { useEffect, useState } from "react";
