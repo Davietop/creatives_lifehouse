@@ -70,7 +70,7 @@ export default function BlogNav() {
     return () => {
       clearTimeout(timeout);
     };
-  }, [blogs.data]);
+  });
 
   return (
     <nav>
@@ -149,7 +149,7 @@ export default function BlogNav() {
           </Drawer>
         </div>
 
-        <Link href="/">
+        <a href="/" target="blank">
           <Image
             src={logo}
             className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
@@ -157,7 +157,7 @@ export default function BlogNav() {
             height={80}
             alt="logo"
           />
-        </Link>
+        </a>
 
         <div className="socials flex items-center  gap-6  ">
           <Link href="https://www.linkedin.com/company/lifehouse-creatives/">
@@ -180,17 +180,13 @@ export default function BlogNav() {
           <SheetContent
             className={cn(poppins.className, " flex flex-col gap-6 pt-20")}
           >
-            <Link color="foreground" href="/">
+            <a color="foreground" href="/" target="_blank">
               Home
-            </Link>
+            </a>
 
-            <Link color="foreground" href="/about">
+            <a color="foreground" href="/about" target="_blank">
               About Us
-            </Link>
-
-            <Link href="/blog" aria-current="page">
-              Blog & Resources
-            </Link>
+            </a>
 
             <Modal />
           </SheetContent>
@@ -198,7 +194,7 @@ export default function BlogNav() {
       </div>
 
       <div className="sm:hidden xs:flex gap-3  flex-col pt-2 pb-10 ">
-        <Link href="/">
+        <a href="/" target="_blank">
           <Image
             src={logo}
             className="mx-auto sm:w-[70px] md:w-[80px] lg:w-[80px]"
@@ -206,7 +202,7 @@ export default function BlogNav() {
             height={80}
             alt="logo"
           />
-        </Link>
+        </a>
 
         <div className="flex pb-2 items-center justify-between pl-8 pr-8">
           <div className="socials flex items-center  gap-6  ">
@@ -230,17 +226,13 @@ export default function BlogNav() {
             <SheetContent
               className={cn(poppins.className, " flex flex-col gap-6 pt-20")}
             >
-              <Link color="foreground" href="/">
+              <a color="foreground" href="/" target="_blank">
                 Home
-              </Link>
+              </a>
 
-              <Link color="foreground" href="/about">
+              <a color="foreground" href="/about" target="_blank">
                 About Us
-              </Link>
-
-              <Link href="/blog" aria-current="page">
-                Blog & Resources
-              </Link>
+              </a>
 
               <Modal />
             </SheetContent>

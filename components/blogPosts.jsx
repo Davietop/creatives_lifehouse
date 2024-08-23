@@ -71,7 +71,7 @@ export default function BlogPosts({ dataBlogg }) {
     return () => {
       clearTimeout(timeout);
     };
-  }, [dataBlog.blogPosts, metaBlog.metaInfo]);
+  }, [dataBlog.blogPosts, metaBlog.metaInfo, fill, metaData]);
 
   function truncateStringAtWordBoundary(str, maxLength, text) {
     if (str.length <= maxLength) {

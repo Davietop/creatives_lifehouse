@@ -42,7 +42,7 @@ export default function MetaPost({ idKey }) {
     }
 
     getData();
-  }, [metaData]);
+  }, [metaData, idKey]);
   if (!postMetaData) return;
   const date = new Date(postMetaData.publishDate).toDateString();
 

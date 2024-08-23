@@ -31,7 +31,7 @@ export default function ContentData({ idKey }) {
     }
 
     getData();
-  }, [content]);
+  }, [content, idKey]);
 
   return (
     <div>

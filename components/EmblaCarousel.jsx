@@ -104,7 +104,14 @@ const EmblaCarousel = (props) => {
     return () => {
       clearTimeout(timeout);
     };
-  }, [dataBlog.blogPosts, metaBlog.metaInfo, createObj.name]);
+  }, [
+    dataBlog.blogPosts,
+    metaBlog.metaInfo,
+    createObj.name,
+    fill,
+    fillId,
+    metaData,
+  ]);
 
   function truncateStringAtWordBoundary(str, maxLength, text) {
     if (str.length <= maxLength) {
