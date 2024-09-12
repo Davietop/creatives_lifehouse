@@ -83,7 +83,7 @@ export default function Services() {
         </div>
         <div className="flex items-center justify-center relative z-10 flex-wrap gap-8 mt-10">
           {card.map((data, arr, i) => {
-            return <CardWithForm key={i} data={data} />;
+            return <CardWithForm key={Math.random()} data={data} />;
           })}
         </div>
       </div>

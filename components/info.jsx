@@ -62,7 +62,7 @@ export default function Information() {
             <CardContent
               style={{
                 position: "relative",
-                "z-index": "100px",
+                zIndex: "100px",
               }}
               className=" text-center  xs:text-xs sm:text-xs  md:text-sm "
             >
@@ -88,7 +88,7 @@ export default function Information() {
         <CardContent
           style={{
             position: "relative",
-            "z-index": "100px",
+            zIndex: "100px",
           }}
           className=" text-center  xs:text-xs sm:text-xs  md:text-sm "
         >

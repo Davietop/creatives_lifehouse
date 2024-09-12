@@ -26,9 +26,9 @@ export function CardWithForm({ data }) {
       <CardHeader>
         <div className="flex text-sm items-center justify-center flex-col gap-6">
           <CardTitle className="text-center font-bold">{data.title}</CardTitle>
-          <CardDescription>
+          <div>
             <Image src={data.src.src} alt="image" width={200} height={200} />
-          </CardDescription>
+          </div>
         </div>
         <CardDescription className="text-xs font-bold text-center">
           {data.description}

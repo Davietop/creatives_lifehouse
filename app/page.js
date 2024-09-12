@@ -14,6 +14,7 @@ import Slide from "@/components/technolgies";
 import Technology from "@/components/technolgies";
 import ContactForm from "@/components/testingContact";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
   return (

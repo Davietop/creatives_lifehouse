@@ -40,13 +40,3 @@ export default function HeroSectionsm() {
     </div>
   );
 }
-
-function add() {
-  const num1 = 1;
-  const num2 = 3;
-
-  const add_value = num1 + num2;
-  return add_value;
-}
-
-add();

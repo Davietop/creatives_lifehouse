@@ -70,7 +70,7 @@ export default function BlogNav() {
     return () => {
       clearTimeout(timeout);
     };
-  });
+  }, []);
 
   return (
     <nav>
@@ -149,7 +149,7 @@ export default function BlogNav() {
           </Drawer>
         </div>
 
-        <a href="/" target="blank">
+        <a href="/">
           <Image
             src={logo}
             className="sm:w-[70px] md:w-[80px] lg:w-[90px]"
@@ -180,11 +180,11 @@ export default function BlogNav() {
           <SheetContent
             className={cn(poppins.className, " flex flex-col gap-6 pt-20")}
           >
-            <a color="foreground" href="/" target="_blank">
+            <a color="foreground" href="/">
               Home
             </a>
 
-            <a color="foreground" href="/about" target="_blank">
+            <a color="foreground" href="/about">
               About Us
             </a>
 
@@ -194,7 +194,7 @@ export default function BlogNav() {
       </div>
 
       <div className="sm:hidden xs:flex gap-3  flex-col pt-2 pb-10 ">
-        <a href="/" target="_blank">
+        <a href="/">
           <Image
             src={logo}
             className="mx-auto sm:w-[70px] md:w-[80px] lg:w-[80px]"
@@ -226,11 +226,11 @@ export default function BlogNav() {
             <SheetContent
               className={cn(poppins.className, " flex flex-col gap-6 pt-20")}
             >
-              <a color="foreground" href="/" target="_blank">
+              <a color="foreground" href="/">
                 Home
               </a>
 
-              <a color="foreground" href="/about" target="_blank">
+              <a color="foreground" href="/about">
                 About Us
               </a>
 
