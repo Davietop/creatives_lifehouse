@@ -18,7 +18,7 @@ export default function HeroSectionsm() {
               poppins.variable
             )}
           >
-            Discover the Force Behind Impactful Digital Experinces.
+            Discover the Force Behind Impactful Digital Experiences.
           </h2>
 
           <p className="text-white text-xs w-10/12 p-4 text-center">

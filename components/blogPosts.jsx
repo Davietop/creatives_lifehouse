@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import Founder from "../public/timi2.webp";
 import { useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 
 import Link from "next/link";
 
@@ -27,6 +28,9 @@ export default function BlogPosts({ dataBlogg }) {
   const [metaData, setMetaData] = useState(metaBlog);
   const [url, setUrl] = useState(urlPath);
   const router = useRouter();
+
+  const { id } = useParams();
+  console.log(id);
 
   let fill = [];
 

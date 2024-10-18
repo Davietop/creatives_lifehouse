@@ -23,7 +23,7 @@ export default function HeroSection() {
             poppins.variable
           )}
         >
-          Discover the Force Behind Impactful Digital Experinces.
+          Discover the Force Behind Impactful Digital Experiences.
         </h2>
 
         <p className={cn("text-white lg:w-9/12 md:w-7/12", fontSans.variable)}>

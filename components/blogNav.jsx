@@ -31,6 +31,7 @@ import { createClient } from "@supabase/supabase-js";
 import Pag from "./searchPag";
 import Pag2 from "./searchPag";
 import { useToast } from "./ui/use-toast";
+import { Router, useRouter } from "next/navigation";
 
 let PageSize = 6;
 
@@ -50,6 +51,11 @@ export default function BlogNav() {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState(resultBlog);
   const { toast } = useToast();
+  const router = useRouter();
+
+  const dataid = router.query;
+
+  console.log(dataid);
 
   const [blogData, setBlogData] = useState(blogs);
   useEffect(() => {

@@ -15,6 +15,7 @@ import Technology from "@/components/technolgies";
 import ContactForm from "@/components/testingContact";
 import Image from "next/image";
 import { useEffect } from "react";
+import { useParams } from "next/navigation";
 
 export default function Home() {
   return (
